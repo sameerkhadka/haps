@@ -15,7 +15,7 @@
     </div>
 
     <div class="video__wrap">
-        <video src="/images/videoplayback.mp4" controls loop uk-video="autoplay: inview"></video>
+        <video src="/images/videoplayback.mp4" controls loop autoplay></video>
         <div class="watch__video">
             <div class="cta">
                 <a href="{{$item->banner_btn_link}}" target="_blank" class="btn">Watch on YouTube</a>

@@ -98,39 +98,49 @@
                     <span>{{setting('contact-us.phone')}}</span>
                 </div>
                 <form class="uk-width-2-3@s uk-margin-medium-top">
-                    <div class="uk-grid uk-child-width-1-2@m">
-                        <div class="catWrap">
-                            <label>Full Name</label>
-                            <input class="uk-input" type="text" required>
+                    <div class="uk-grid">
+                        <div class="uk-width-1-2@m">
+                            <div class="catWrap">
+                                <label>Full Name</label>
+                                <input class="uk-input" type="text" required>
+                            </div>
                         </div>
-                        <div class="catWrap">
-                            <label>Age</label>
-                            <input class="uk-input" type="number" required>
+                        <div class="uk-width-1-2@m">
+                            <div class="catWrap">
+                                <label>Age</label>
+                                <input class="uk-input" type="number" required>
+                            </div>
                         </div>
-                        <div class="catWrap">
+                        <!-- <div class="catWrap">
                             <label>Gender</label>
                             <select class="uk-select">
                                 <option>Male</option>
                                 <option>Female</option>
                                 <option>Others</option>
                             </select>
+                        </div> -->
+                        <div class="uk-width-1-2@m">
+                            <div class="catWrap">
+                                <label>Email</label>
+                                <input class="uk-input" type="email" required>
+                            </div>
                         </div>
-                        <div class="catWrap">
-                            <label>Email</label>
-                            <input class="uk-input" type="email" required>
+                        <div class="uk-width-1-2@m">
+                            <div class="catWrap">
+                                <label>Phone</label>
+                                <input class="uk-input" type="number">
+                            </div>
                         </div>
-                        <div class="catWrap">
-                            <label>Phone</label>
-                            <input class="uk-input" type="number">
-                        </div>
-                        <div class="catWrap">
+                        <!-- <div class="catWrap">
                             <label>Previous number of Volunteers</label>
                             <input class="uk-input" type="number">
-                        </div>
+                        </div> -->
                     </div>
-                    <div class="catWrap">
-                        <label>Why do you want to volunteer?</label>
-                        <textarea name="" id="" required></textarea>
+                    <div class="uk-grid uk-width-2xlarge">
+                        <div class="catWrap">
+                            <label>How can you contribute?</label>
+                            <textarea name="" id="" placeholder="Research, Enumerator, data analysis, Program Management" required></textarea>
+                        </div>
                     </div>
                     <div class="catWrap uk-flex">
                         <label><input class="uk-checkbox" type="checkbox"></label>

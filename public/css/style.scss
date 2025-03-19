@@ -441,12 +441,13 @@ nav{
 
     overflow: hidden;
     position: relative;
+    height: calc(100vh - 112px);
 
     video{
 
         max-width: 100%;
         width: 100%;
-        height: calc(100vh - 112px);
+        height: 100%;
         object-fit: cover;
     }
     .watch__video{
@@ -727,25 +728,6 @@ nav{
     }
 }
 
-.bannerVideo__wrap{
-
-    position: relative;
-    height: calc(100vh - $header);
-
-    video{
-
-        width: 100%;
-        object-fit: cover;
-        height: 100%;
-    }
-
-    .audio_btn{
-        position: absolute;
-
-        bottom: 80px;
-        left: 80px;
-    }
-}
 
 .volunteer{
 
@@ -1557,10 +1539,14 @@ footer{
             font-size: 14px;
         }
     }
+    .uk-grid+.uk-grid {
+        margin-top: 0px;
+    }
 
     .catWrap{
 
         margin-bottom: 16px;
+        width: 100%;
 
         label{
 
@@ -1720,7 +1706,7 @@ footer{
 
         padding-left: 32px;
         position: relative;
-        margin-top: 28px!important;
+        margin-top: 24px!important;
 
         &::before {
         
@@ -1739,9 +1725,22 @@ footer{
 
             text-transform: none;
             font-weight: 300;
-            font-size: 24px;
+            font-size: 21px;
             line-height: normal;
             font-family: 'Work Sans';
+            position: relative;
+            display: inline-block;
+
+            &::after{
+
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 100%;
+                height: 1px;
+                background-color: $brown;
+            }
         }
 
             
@@ -1811,5 +1810,14 @@ footer{
 
         width: 100%;
         height: 72vh;
+    }
+
+    .sub__content{
+
+        img{
+
+            width: 100%;
+            height: 100%;
+        }
     }
 }
