@@ -172,7 +172,7 @@
     </section>
 
 
-    <!-- <section class="newsUpdates p-1">
+     <!-- <section class="newsUpdates p-1">
         <div class="uk-container">
             <h2>{{$item->news_title}}</h2>
             <p>
