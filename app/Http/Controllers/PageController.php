@@ -20,7 +20,7 @@ class PageController extends Controller
     public function index()
     {
         $data['item'] = Homepage::find(1);
-        $data['projects'] = Project::orderBy('date','desc')->get()->except(1);
+        $data['projects'] = Project::orderBy('order')->get()->except(1);
         $data['news'] = News::orderBy('date','desc')->get()->except(1);
         return view('pages.index', $data);
     }
@@ -36,7 +36,7 @@ class PageController extends Controller
     public function project()
     {
         $data['item'] = Project::find(1);
-        $data['projects'] = Project::orderBy('date','desc')->get()->except(1);
+        $data['projects'] = Project::orderBy('order')->get()->except(1);
         return view('pages.projects', $data);
     }
 
