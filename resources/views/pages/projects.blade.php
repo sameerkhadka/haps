@@ -42,7 +42,7 @@
                                 <img src="{{Voyager::image($project->cover)}}">
                             </div>
                             <div class="uk-panel">
-                                <div class="uk-position-small uk-position-bottom uk-overlay sliderText">
+                                <div class="uk-position-small uk-position-bottom uk-overlay cardTitle">
                                     <h4>{{$project->title}}</h4>
                                     <div class="cta">
                                         <div class="inCard">

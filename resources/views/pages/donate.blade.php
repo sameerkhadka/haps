@@ -67,18 +67,17 @@
             {!!$item->donate_text!!}
         </div>
         <div class="uk-container">
-            <div class="uk-grid uk-child-width-1-3 uk-text-center">
-                <div class="volunteerContact ">
+            <div class="uk-grid uk-child-width-1-3@s">
+                <div class="volunteerContact  uk-text-center@s">
                     <h5>Company Mailing Address</h5>
                     <span>{{setting('contact-us.address')}}</span>
                     <span>{{setting('contact-us.email')}}</span>
                 </div>
-                <div>
-                    
+                <div class="uk-text-center@s">
                     <h5>General inquiries</h5>
                     <span>{{setting('contact-us.phone')}}</span>
                 </div>
-                <div class="">
+                <div class="uk-text-center@s">
                     <h5>Our bank account in Nepal</h5>
                     <div class="bank_details">
                         {!!$item->bank_detail!!}

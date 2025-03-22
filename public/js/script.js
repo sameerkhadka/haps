@@ -21,6 +21,24 @@ var swiper = new Swiper(".home__projects", {
     }
   });
 
+  var swiper = new Swiper(".projectsGallery", {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    navigation: {
+      nextEl: ".projectsGallerynav.swiper-button-next",
+      prevEl: ".projectsGallerynav.swiper-button-prev",
+    },
+    breakpoints: {
+      380: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+    }
+  });
+
+
 
   
 const audioPlayer = document.querySelectorAll(".music-control");

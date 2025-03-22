@@ -140,6 +140,7 @@ p{
     font-size: 18px;
     font-weight: 400;
     line-height: 32px;
+    text-align: justify;
 
     @media screen and (max-width: 968px) {
         font-size: 16px;
@@ -437,48 +438,14 @@ nav{
     }
 }
 
+
 .video__wrap{
-
-    overflow: hidden;
-    position: relative;
-    height: calc(100vh - 112px);
-
-    video{
-
-        max-width: 100%;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    .watch__video{
-
-        position: absolute;
-        bottom: 24%;
-
-        .cta a.btn{
-
-            min-width: 240px;
-            max-width: 240px;
-        }
-
-        @media screen and (min-width: 1600px) {
-            
-            left: 160px;
-        }
-        @media screen and (max-width: 1600px) {
-            
-            left: 40px;
-        }
-        @media screen and (max-width: 1025px) {
-            
-            left: 28px;
-        }
-        @media screen and (max-width: 640px) {
-            
-            left: 50%;
-            transform: translate(-50%);
-        }
-    }
+    
+    position: fixed;
+    bottom: 20px;
+    right: 24px;
+    width: 180px;
+    z-index: 1000;
 }
 
 .home_videobanner{
@@ -539,15 +506,32 @@ nav{
     // }
 }
 
-.home_banner .uk-slideshow-items{
+.home_banner {
+    .uk-slideshow-items{
 
-    height: calc(100vh - 112px);
-    // display: none;
+        height: calc(100vh - 112px);
+        
+    }
+    .uk-icon:not(.uk-preserve) [stroke*="#"]:not(.uk-preserve) {
+        stroke-width: 4;
+    }
 
-    // @media screen and (max-width: 560px) {
-           
-    //     display: block;
-    // }
+    @media screen and (max-width: 1281px) {
+        
+        .uk-hidden-visually:not(:focus):not(:active):not(:focus-within), .uk-visible-toggle:not(:hover):not(:focus) .uk-hidden-hover:not(:focus-visible):not(:has(:focus-visible)){
+
+            width: 45px !important;
+            height: auto !important;
+            padding: 10px !important;
+        }
+    }
+
+    @media screen and (max-width: 561px) {
+        
+        .uk-icon:not(.uk-preserve) [stroke*="#"]:not(.uk-preserve) {
+            stroke-width: 3;
+        }
+    }
 }
 
 .music-control {
@@ -821,28 +805,21 @@ nav{
 }
 
 
-.homeHapsaProjects{
+.project__card{
 
-    .uk-panel .cta{
-        padding-bottom: 4px;
-    }
+    overflow: hidden;
+    margin-top: 40px;
+    
+    &:hover{
 
-    .project__card{
+        .projectCard__image{
 
-        overflow: hidden;
-        margin-top: 40px;
-        
-        &:hover{
+            
+            transform: scale(1.1);
+            transition: all 1.3s , opacity .6s ;
 
-            .projectCard__image{
-
-                
-                transform: scale(1.1);
-                transition: all 1.3s , opacity .6s ;
-
-                &::before{
-                    opacity: 0;
-                }
+            &::before{
+                opacity: 0;
             }
         }
     }
@@ -893,7 +870,11 @@ nav{
         }
     }
 
-    .sliderText{
+    .uk-panel .cta{
+        padding-bottom: 4px;
+    }
+
+    .cardTitle{
 
         h4{
             
@@ -980,7 +961,7 @@ nav{
     }
 }
 
-.video__wrap{
+.galleryVideo__wrap{
 
     .overlay{
     
@@ -1351,7 +1332,6 @@ footer{
 
     .footer__disclaimer{
         
-        text-align: center;
         margin: 96px 0 80px;
     }
 
@@ -1365,14 +1345,20 @@ footer{
             padding-bottom: 52px;
             font-size: 13px;
 
-            .uk-icon{
+            &.icon{
 
-                color: $notwhite;
+                img{
+
+                    padding: 5px;
+                    background-color: #fff;
+                    border-radius: 25px;
+                    width: 36px;               
+                }
             }
 
             .uk-flex{
                 
-                gap: 24px;
+                gap: 22px;
             }
 
         }
@@ -1529,16 +1515,6 @@ footer{
         margin-bottom: 20px;
     }
 
-    span{
-
-        font-size: 16px;
-        margin-bottom: 6px ;
-
-        
-        @media screen and (max-width: 561px) {
-            font-size: 14px;
-        }
-    }
     .uk-grid+.uk-grid {
         margin-top: 0px;
     }
@@ -1546,7 +1522,6 @@ footer{
     .catWrap{
 
         margin-bottom: 16px;
-        width: 100%;
 
         label{
 
@@ -1584,6 +1559,21 @@ footer{
 }
 
 
+
+.bank_details p {
+
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 6px;
+    margin-top: 0;
+
+    @media screen and (max-width: 561px) {
+        
+        text-align: auto;
+        font-size: 14px;
+    }
+}
+
 .donationDetails{
 
     img{
@@ -1614,6 +1604,15 @@ footer{
 .mission{
 
     background-color: #b3e3f42e;
+
+    p{
+        margin-right: 16px;
+
+        @media screen and (max-width: 561px) {
+            
+            margin-right: 0;
+        }
+    }
     
     .mission__wrap{
 
@@ -1700,62 +1699,6 @@ footer{
 }
 
 
-.resources_list{
-
-    li{
-
-        padding-left: 32px;
-        position: relative;
-        margin-top: 24px!important;
-
-        &::before {
-        
-            content: '';
-            position: absolute;
-            top: 4px;
-            left: 0;
-            width: 16px;
-            height: 16px;
-            background-image: url('../images/list.png');
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-        }
-
-        a{
-
-            text-transform: none;
-            font-weight: 300;
-            font-size: 21px;
-            line-height: normal;
-            font-family: 'Work Sans';
-            position: relative;
-            display: inline-block;
-
-            &::after{
-
-                content: '';
-                position: absolute;
-                left: 0;
-                bottom: -2px;
-                width: 100%;
-                height: 1px;
-                background-color: $brown;
-            }
-        }
-
-            
-        @media screen and (max-width: 561px) {
-
-            margin-top: 20px!important;
-
-            a{
-                
-                font-size: 20px;
-            }
-        }
-    }
-}
-
 .content__detail{
 
     h1{
@@ -1817,7 +1760,79 @@ footer{
         img{
 
             width: 100%;
-            height: 100%;
+            height: auto;
+        }
+    }
+}
+
+.projectGallery_slider{
+
+    .projectsGallery__image{
+
+        img {
+            height: 224px;
+            min-width: 100%;
+        }
+    }
+
+    .swiper-button-prev {
+        left: 6px;
+        height: 28px;
+        background-color: transparent;
+        top: 50%;
+        border: 1px solid #ffffff00;
+        background-color: #ffffff00;
+        padding: 4px;
+        transition: all .4s;
+
+        &::after{
+
+            font-size: 36px;
+            color: $white;
+            transition: all .4s;
+        }
+
+        &:hover{
+          
+            border: 1px solid $notwhite;
+            background-color: $notwhite;
+
+            &::after{
+    
+                font-size: 16px;
+                color: $darkblue;
+            }
+
+        }
+    }
+    .swiper-button-next {
+        right: 6px;
+        height: 28px;
+        background-color: transparent;
+        top: 50%;
+        border: 1px solid #ffffff00;
+        background-color: #ffffff00;
+        padding: 4px;
+        transition: all .4s;
+
+        &::after{
+
+            font-size: 36px;
+            color: $white;
+            transition: all .4s;
+        }
+
+        &:hover{
+          
+            border: 1px solid $notwhite;
+            background-color: $notwhite;
+
+            &::after{
+    
+                font-size: 16px;
+                color: $darkblue;
+            }
+
         }
     }
 }

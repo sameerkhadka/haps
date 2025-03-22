@@ -36,25 +36,25 @@
                 </div>
             </div>
             <div class="footer__disclaimer">
-                <p>HAPSA Nepal is a 501(c)(3) nonprofit organization, EIN 30-1032421. Donations are tax-deductible.</p>
+                <p class="uk-text-center">HAPSA Nepal is a 501(c)(3) nonprofit organization, EIN 30-1032421. Donations are tax-deductible.</p>
             </div>
             <div class="footer__end">
                 <div class="uk-child-width-1-3@l uk-child-width-1-2@s uk-grid">
-                    <div class="footerEnd__section uk-flex">
+                    <div class="footerEnd__section uk-flex icon">
                         <ul class="uk-flex">
                             <li>
                                 <a href="{{setting('contact-us.facebook')}}" target="_blank">
-                                    <span uk-icon="icon: facebook" class="uk-icon"></span>
+                                    <img src="./images/facebook.png" alt="">
                                 </a>
                             </li>
                             <li>
                                 <a href="{{setting('contact-us.youtube')}}" target="_blank">
-                                    <span uk-icon="icon: youtube" class="uk-icon"></span>
+                                <img src="./images/youtube.png" alt="">
                                 </a>
                             </li>
                             <li>
                                 <a href="{{setting('contact-us.instagram')}}" target="_blank">
-                                    <span uk-icon="icon: instagram" class="uk-icon"></span>
+                                <img src="./images/instagram.png" alt="">
                                 </a>
                             </li>
                         </ul>

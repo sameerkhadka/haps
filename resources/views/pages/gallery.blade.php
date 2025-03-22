@@ -35,7 +35,7 @@
             <h1>Video Gallery</h1>
             <div class="uk-grid uk-child-width-1-3@s">
                 @foreach($videos as $vid)
-                <div class="video__wrap uk-margin-medium-top">
+                <div class="galleryVideo__wrap uk-margin-medium-top">
                     <div class="overlay">
                         <iframe src="{{$vid->link}}"  allowfullscreen uk-responsive uk-video="automute: true; autoplay: hover"></iframe>
                     </div>
@@ -49,35 +49,65 @@
     <section class="gallery p-1">
         <div class="uk-container">
             <h1>Photo Gallery</h1>
-            <div class="gallerySection__wrap">
-                @foreach($images as $img)
-                <div class="gallerySection uk-margin-large-top">
-                    <div class="uk-position-relative" uk-slideshow="animation: fade; autoplay: true; autoplay-interval: 4000">
-    
-                        <div class="uk-slideshow-items">
-                            @foreach(json_decode($img->images) as $item)
-                            <div>
-                                <img src="{{Voyager::image($item)}}" alt="" uk-cover>
+            <div class="gallerySection__wrap uk-margin-large-top">
+                <div class="galleryImage__section uk-margin-xlarge-bottom">
+                    <div class="uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid="masonry: pack">
+                        <div>
+                            <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
+                                <img src="/images/document.jpg" alt="">
                             </div>
-                            @endforeach
                         </div>
-                    
-                        <div class="uk-position-bottom-center uk-position-small">
-                            <ul class="uk-thumbnav">
-                            @foreach(json_decode($img->images) as $item)
-                                <li uk-slideshow-item="{{$loop->iteration}}"><a href="#"><img src="{{Voyager::image($item)}}" width="100" height="67" alt=""></a></li>
-                            @endforeach
-                            </ul>
+                        <div>
+                            <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
+                                <img src="/images/homebanner_adjusted2.jpg" alt="">
+                            </div>
                         </div>
-                    
+                        <div>
+                            <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
+                                <img src="/images/homebanner_adjusted1.jpg" alt="">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
+                                <img src="/images/gallery.jpg" alt="">
+                            </div>
+                        </div>
                     </div>
-    
+
                     <div class="figCaption uk-margin-medium-top uk-text-center">
-                        <h3>{{$img->title}}</h3>
+                        <h3>Image Title</h3>
                     </div>
                 </div>
-                @endforeach
+                <div class="galleryImage__section uk-margin-xlarge-bottom">
+                    <div class="uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid="masonry: pack">
+                        <div>
+                            <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
+                                <img src="/images/document.jpg" alt="">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
+                                <img src="/images/homebanner_adjusted2.jpg" alt="">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
+                                <img src="/images/homebanner_adjusted1.jpg" alt="">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
+                                <img src="/images/gallery.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="figCaption uk-margin-medium-top uk-text-center">
+                        <h3>Image Title</h3>
+                    </div>
+                </div>
             </div>
+            
         </div>
     </section>
 @endsection

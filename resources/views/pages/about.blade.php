@@ -24,26 +24,6 @@
         @endif
     </audio>
 
-    
-    <!-- <section class="non banner" style="background-image: url('./images/aboutus.png')">
-        <div class="overlay"></div>
-        <div class="uk-container">
-            <div class="bannerText">
-                <div class="text">
-                    <ul class="breadcrumb uk-flex">
-                        <li>
-                            <a href="./index.html">Home</a>
-                            <span uk-icon="icon: chevron-right"></span>
-                        </li>
-                        <li>
-                            About Us
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
 
     <section class="home_intro p-1">
         <div class="uk-container">
@@ -60,7 +40,7 @@
             <div class="uk-grid">
                 <div class="uk-width-1-3@s">
                     <h2>{{$item->mission_title}}</h2>
-                    <p>{{$item->mission_text}}</p>
+                    <p class="uk-padding-">{{$item->mission_text}}</p>
                 </div>
                 <div class="uk-width-2-3@s">
                     <div class="uk-grid uk-child-width-1-2@m">
@@ -85,7 +65,7 @@
         <div class="uk-container">
             <div class="uk-margin-auto uk-margin-auto-vertical uk-width-3-5@s">
                 <h2>{{$item->team_title}}</h2>
-                <p class="uk-margin-medium-bottom">{{$item->team_text}}
+                <p class="uk-margin-medium-bottom uk-text-center">{{$item->team_text}}
                 </p>
             </div>
             
@@ -98,7 +78,7 @@
                     <div class="about__team">
                         <div class="desg">{{$team->designation}}</div>
                         <h4>{{$team->name}}</h5>
-                        <span>{{$team->education}}</p>
+                        <span>{{$team->education}}</span>
                     </div>
                 </div>
                 @endforeach

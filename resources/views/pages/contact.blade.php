@@ -10,9 +10,9 @@
                 
 
     <section class="volunteerForm p-12" id="volunteerform">
-        <div class="uk-container uk-container-small uk-text-center@m uk-margin-medium-bottom">
-            <h1>Let's get in touch</h1>
-            <p>Feel free to reach out to us using the options below, and our dedicated team will respond to your inquiries promptly.
+        <div class="uk-container uk-container-small uk-margin-medium-bottom">
+            <h1 class="uk-text-center@m">Let's get in touch</h1>
+            <p class="uk-text-center@m">Feel free to reach out to us using the options below, and our dedicated team will respond to your inquiries promptly.
             </p>
         </div>
         <div class="uk-container">

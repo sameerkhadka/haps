@@ -14,14 +14,46 @@
         </a>
     </div>
 
-    <div class="video__wrap">
-        <video src="/images/videoplayback.mp4" controls loop autoplay></video>
-        <div class="watch__video">
-            <div class="cta">
-                <a href="{{$item->banner_btn_link}}" target="_blank" class="btn">Watch on YouTube</a>
-            </div>
-        </div>
+    <div class="video__wrap" uk-tooltip="title: View CPR Song; delay: 200">
+        
+        <a href="{{$item->banner_btn_link}}" target="_blank" class="btn">
+            <video src="./images/videoplayback.mp4" controls loop autoplay></video>
+        </a>
+           
+        <!-- <div class="watch__video">
+            <div class="cta"> </div>
+        </div> -->
     </div>
+
+
+    <section class="home_banner">
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: fade">
+
+            <div class="uk-slideshow-items">
+                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-bottom">
+                    <img src="./images/homebanner_adjusted1.jpg" alt="" uk-cover>
+                </div>
+                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-bottom">
+                    <img src="./images/homebanner_adjusted1.jpg" alt="" uk-cover>
+                </div>
+                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-bottom">
+                    <img src="./images/homebanner_adjusted4.jpg" alt="" uk-cover>
+                </div>
+                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-bottom">
+                    <img src="./images/homebanner_adjusted3.jpg" alt="" uk-cover>
+                </div>
+                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-bottom">
+                    <img src="./images/homebanner_adjusted2.jpg" alt="" uk-cover>
+                </div>
+            </div>
+        
+            <a class="uk-position-center-left uk-slidenav-large uk-hidden-hover" href uk-slidenav-previous uk-slideshow-item="previous"></a>
+            <a class="uk-position-center-right uk-slidenav-large uk-hidden-hover" href uk-slidenav-next uk-slideshow-item="next"></a>
+        
+        </div>
+    </section>
+
+
 
     <section class="volunteer">
         <div class="uk-container">
@@ -93,7 +125,7 @@
                                         <img src="{{VOyager::image($pro->cover)}}">
                                     </div>
                                     <div class="uk-panel">
-                                        <div class="uk-position-small uk-position-bottom uk-overlay sliderText">
+                                        <div class="uk-position-small uk-position-bottom uk-overlay cardTitle">
                                             <h4>{{$pro->title}}</h4>
                                             <div class="cta">
                                                 <div class="inCard">
@@ -121,9 +153,9 @@
 
     <section class="ongoing p-12">
         <div class="uk-container">
-            <div  class="uk-text-center@s">
+            <div class="uk-text-center@s">
                 <h2>{{$item->activities_title}}</h2>
-                <p>
+                <p class="uk-text-center@s">
                 {{$item->activities_text}}
                 </p>
             </div>
@@ -139,33 +171,47 @@
                             </p>
                         </div>
                     </div>
-                    @if($item->activities_images && $item->activities_images != [])
                     <div class="uk-width-3-5@s">
-                        <div class="gallerySection">
-                            <div class="uk-position-relative" uk-slideshow="animation: fade; autoplay: false; autoplay-interval: 4000">
-
-                                <div class="uk-slideshow-items">
-                                    @foreach(json_decode($item->activities_images) as $img)
-                                    <div>
-                                        <img src="{{Voyager::image($img)}}" alt="" uk-cover>
+                        <div class="projectGallery_slider uk-margin-medium-top uk-position-relative">
+                            <div class="swiper projectsGallery uk-margin">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="projectsGallery__image">
+                                            <img src="/images/document.jpg">
+                                        </div>
                                     </div>
-                                    @endforeach
+                                    <div class="swiper-slide">
+                                        <div class="projectsGallery__image">
+                                            <img src="/images/homebanner_adjusted1.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="projectsGallery__image">
+                                            <img src="/images/gallery.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide"> 
+                                        <div class="projectsGallery__image">
+                                            <img src="/images/homebanner_adjusted2.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">  
+                                        <div class="projectsGallery__image">
+                                            <img src="/images/homebanner_adjusted3.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="projectsGallery__image">
+                                            <img src="/images/gallery.jpg">
+                                        </div>
+                                    </div>
                                 </div>
-                            
-                                <div class="uk-position-bottom-center uk-position-small">
-                                    <ul class="uk-thumbnav">
-                                        @foreach(json_decode($item->activities_images) as $img)
-                                        <li uk-slideshow-item="{{$loop->iteration}}"><a href="#"><img src="{{Voyager::image($img)}}" width="100" height="67" alt=""></a></li>
-                                        @endforeach
-                                        
-                                    </ul>
-                                </div>
-                            
                             </div>
+                            <div class="swiper-button-prev projectsGallerynav"></div>
+                            <div class="swiper-button-next projectsGallerynav"></div>
                         </div>
-                        
+                            
                     </div>
-                    @endif
                 </div>
             </div>
         </div>
