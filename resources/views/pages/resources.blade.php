@@ -35,74 +35,25 @@
             <h2>Resources and Publications</h2>
             <div class="resources_card uk-margin-medium-top">
                 <div class="uk-grid uk-child-width-1-3@m uk-child-width-1-2@s">
+                    @foreach($resources as $res)
                     <div class="uk-transition-toggle">  
                         <div class="project__card">
                             <div class="projectCard__image">
-                                <img src="/images/HAPSA CPR Report.png">
+                                <img src="{{$res->image ? Voyager::image($res->image) : '/images/document.jpg'}}">
                             </div>
                             <div class="uk-panel">
                                 <div class="uk-position-small uk-position-bottom uk-overlay cardTitle">
-                                    <h4>HAPSA CPR Report</h4>
+                                    <h4>{{$res->title}}</h4>
                                     <div class="cta">
                                         <div class="inCard">
-                                            <a href="HAPSA CPR Report.pdf">Explore</a>
+                                            <a href="{{$res->link ?? '/storage/'.json_decode($res->file)[0]->download_link}}" target="blank">Explore</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="uk-transition-toggle">  
-                        <div class="project__card">
-                            <div class="projectCard__image">
-                                <img src="https://www.annemergmed.com/cms/asset/57aa5176-763e-4ad6-9e63-94a4a69c30c3/cov200h.gif">
-                            </div>
-                            <div class="uk-panel">
-                                <div class="uk-position-small uk-position-bottom uk-overlay cardTitle">
-                                    <h4>Jajarkot Earthquake Relief</h4>
-                                    <div class="cta">
-                                        <div class="inCard">
-                                            <a href="project_detail.html">Explore</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="uk-transition-toggle">  
-                        <div class="project__card">
-                            <div class="projectCard__image">
-                                <img src="/images/document.jpg">
-                            </div>
-                            <div class="uk-panel">
-                                <div class="uk-position-small uk-position-bottom uk-overlay cardTitle">
-                                    <h4>Pilot Training Program on Hands-Only CPR</h4>
-                                    <div class="cta">
-                                        <div class="inCard">
-                                            <a href="https://www.researchgate.net/publication/378145438_Pilot_Training_Program_on_Hands-Only_CPR_and_Choking_First_Aid_for_Frontline_Police_Responders_in_Rural_Nepal">Explore</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="uk-transition-toggle">  
-                        <div class="project__card">
-                            <div class="projectCard__image">
-                                <img src="/images/document.jpg">
-                            </div>
-                            <div class="uk-panel">
-                                <div class="uk-position-small uk-position-bottom uk-overlay cardTitle">
-                                    <h4>Pilot Training Program on Hands-Only CPR</h4>
-                                    <div class="cta">
-                                        <div class="inCard">
-                                            <a href="https://www.researchgate.net/publication/378145438_Pilot_Training_Program_on_Hands-Only_CPR_and_Choking_First_Aid_for_Frontline_Police_Responders_in_Rural_Nepal">Explore</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

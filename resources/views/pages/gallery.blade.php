@@ -50,62 +50,25 @@
         <div class="uk-container">
             <h1>Photo Gallery</h1>
             <div class="gallerySection__wrap uk-margin-large-top">
+                @foreach($images as $image)
                 <div class="galleryImage__section uk-margin-xlarge-bottom">
+                    @if($image->images || $image->images!=[])
                     <div class="uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid="masonry: pack">
+                        @foreach(json_decode($image->images) as $img)
                         <div>
                             <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
-                                <img src="/images/document.jpg" alt="">
+                                <img src="{{Voyager::image($img)}}" alt="">
                             </div>
                         </div>
-                        <div>
-                            <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
-                                <img src="/images/homebanner_adjusted2.jpg" alt="">
-                            </div>
-                        </div>
-                        <div>
-                            <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
-                                <img src="/images/homebanner_adjusted1.jpg" alt="">
-                            </div>
-                        </div>
-                        <div>
-                            <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
-                                <img src="/images/gallery.jpg" alt="">
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
+                    @endif
 
                     <div class="figCaption uk-margin-medium-top uk-text-center">
-                        <h3>Image Title</h3>
+                        <h3>{{$image->title}}</h3>
                     </div>
                 </div>
-                <div class="galleryImage__section uk-margin-xlarge-bottom">
-                    <div class="uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid="masonry: pack">
-                        <div>
-                            <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
-                                <img src="/images/document.jpg" alt="">
-                            </div>
-                        </div>
-                        <div>
-                            <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
-                                <img src="/images/homebanner_adjusted2.jpg" alt="">
-                            </div>
-                        </div>
-                        <div>
-                            <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
-                                <img src="/images/homebanner_adjusted1.jpg" alt="">
-                            </div>
-                        </div>
-                        <div>
-                            <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
-                                <img src="/images/gallery.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figCaption uk-margin-medium-top uk-text-center">
-                        <h3>Image Title</h3>
-                    </div>
-                </div>
+                @endforeach
             </div>
             
         </div>
