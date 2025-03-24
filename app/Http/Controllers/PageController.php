@@ -14,12 +14,14 @@ use App\Resource;
 use App\Volunteer;
 use App\Donate;
 use App\Homepage;
+use App\Slider;
 
 class PageController extends Controller
 {
     public function index()
     {
         $data['item'] = Homepage::find(1);
+        $data['sliders'] = Slider::orderBy('order')->get();
         $data['projects'] = Project::orderBy('order')->get()->except(1);
         $data['news'] = News::orderBy('date','desc')->get()->except(1);
         return view('pages.index', $data);

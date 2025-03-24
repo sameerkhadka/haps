@@ -30,21 +30,11 @@
         <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: fade">
 
             <div class="uk-slideshow-items">
+                @foreach($sliders as $slider)
                 <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-bottom">
-                    <img src="./images/homebanner_adjusted1.jpg" alt="" uk-cover>
+                    <img src="{{Voyager::image($slider->image)}}" alt="" uk-cover>
                 </div>
-                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-bottom">
-                    <img src="./images/homebanner_adjusted1.jpg" alt="" uk-cover>
-                </div>
-                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-bottom">
-                    <img src="./images/homebanner_adjusted4.jpg" alt="" uk-cover>
-                </div>
-                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-bottom">
-                    <img src="./images/homebanner_adjusted3.jpg" alt="" uk-cover>
-                </div>
-                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-bottom">
-                    <img src="./images/homebanner_adjusted2.jpg" alt="" uk-cover>
-                </div>
+                @endforeach
             </div>
         
             <a class="uk-position-center-left uk-slidenav-large uk-hidden-hover" href uk-slidenav-previous uk-slideshow-item="previous"></a>
@@ -171,40 +161,18 @@
                             </p>
                         </div>
                     </div>
+                    @if($item->activities_images)
                     <div class="uk-width-3-5@s">
                         <div class="projectGallery_slider uk-margin-medium-top uk-position-relative">
                             <div class="swiper projectsGallery uk-margin">
                                 <div class="swiper-wrapper">
+                                    @foreach(json_decode($item->activities_images) as $img)
                                     <div class="swiper-slide">
                                         <div class="projectsGallery__image">
-                                            <img src="/images/document.jpg">
+                                            <img src="{{Voyager::image($img)}}">
                                         </div>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="projectsGallery__image">
-                                            <img src="/images/homebanner_adjusted1.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="projectsGallery__image">
-                                            <img src="/images/gallery.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide"> 
-                                        <div class="projectsGallery__image">
-                                            <img src="/images/homebanner_adjusted2.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">  
-                                        <div class="projectsGallery__image">
-                                            <img src="/images/homebanner_adjusted3.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="projectsGallery__image">
-                                            <img src="/images/gallery.jpg">
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="swiper-button-prev projectsGallerynav"></div>
@@ -212,6 +180,7 @@
                         </div>
                             
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
