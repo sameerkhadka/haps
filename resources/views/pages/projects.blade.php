@@ -39,7 +39,7 @@
                     <div class="uk-transition-toggle">  
                         <div class="project__card">
                             <div class="projectCard__image">
-                                <img src="{{Voyager::image($project->cover)}}">
+                                <img src="{{$project->cover ? Voyager::image($project->cover) : '/images/document.jpg'}}">
                             </div>
                             <div class="uk-panel">
                                 <div class="uk-position-small uk-position-bottom uk-overlay cardTitle">
