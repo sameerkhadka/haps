@@ -44,44 +44,23 @@
                @endforeach
             </div>
 
+            @if($item->gallery || $item->galley!=[])
             <div class="projectGallery_slider uk-margin-medium-top uk-position-relative">
                 <div class="swiper projectsGallery uk-margin">
                     <div class="swiper-wrapper">
+                        @foreach(json_decode($item->gallery) as $img)
                         <div class="swiper-slide">
                             <div class="projectsGallery__image">
-                                <img src="/images/document.jpg">
+                                <img src="{{Voyager::image($img)}}">
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="projectsGallery__image">
-                                <img src="/images/homebanner_adjusted1.jpg">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="projectsGallery__image">
-                                <img src="/images/gallery.jpg">
-                            </div>
-                        </div>
-                        <div class="swiper-slide"> 
-                            <div class="projectsGallery__image">
-                                <img src="/images/homebanner_adjusted2.jpg">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">  
-                            <div class="projectsGallery__image">
-                                <img src="/images/homebanner_adjusted3.jpg">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="projectsGallery__image">
-                                <img src="/images/gallery.jpg">
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="swiper-button-prev projectsGallerynav"></div>
                 <div class="swiper-button-next projectsGallerynav"></div>
             </div>
+            @endif
         </div>
     </section>
             
