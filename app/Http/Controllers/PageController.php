@@ -7,6 +7,7 @@ use App\About;
 use App\Mission;
 use App\Team;
 use App\Project;
+use App\ProjectBlog;
 use App\News;
 use App\PhotoGallery;
 use App\VideoGallery;
@@ -45,7 +46,14 @@ class PageController extends Controller
     public function projectDetail($slug)
     {
         $data['item'] = Project::where('slug',$slug)->FirstOrFail();
+        $data['blogs'] = ProjectBlog::where('project_id', $data['item']->id)->orderBy('order')->get();
         return view('pages.projectDetail', $data);
+    }
+
+    public function projectBlog($id)
+    {
+        $data['item'] = ProjectBlog::find($id);
+        return view('pages.projectBlog', $data);
     }
     
     public function news()

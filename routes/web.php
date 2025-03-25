@@ -26,6 +26,7 @@ Route::get('/contact',[PageController::class,'contact']);
 Route::get('/volunteer',[PageController::class,'volunteer']);
 Route::get('/donate',[PageController::class,'donate']);
 Route::get('/resources',[PageController::class,'resource']);
+Route::get('/project-blog/{id}',[PageController::class,'projectBlog']);
 
 
 Route::group(['prefix' => 'admin'], function () {
