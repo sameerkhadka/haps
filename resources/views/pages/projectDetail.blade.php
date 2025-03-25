@@ -11,7 +11,9 @@
     <section class="content__detail p-1">
         <div class="uk-container uk-container-small">
             <h1>{{$item->title}}</h1>
+            @if($item->date)
             <div class="date uk-text-center uk-margin-large-bottom">{{date('F d, Y',strtotime($item->date))}}</div>
+            @endif
             @if($item->quote)
             <div class="content__highlight">
                 {{$item->quote}}
