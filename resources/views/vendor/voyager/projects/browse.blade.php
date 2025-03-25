@@ -264,8 +264,8 @@
                                                 @endif
                                             @endforeach
                                         <a href="/admin/details?project_id={{$data->id}}" title="View" class="btn btn-sm btn-warning pull-right view">
-                <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">View</span>
-            </a>
+                                            <i class="voyager-file-text"></i> <span class="hidden-xs hidden-sm">Project Blog</span>
+                                        </a>
                                         </td>
                                     </tr>
                                     @endforeach
