@@ -1,14 +1,18 @@
 @extends('voyager::master')
 
+@php 
+    $project = \App\Project::find(Request('project_id'));
+@endphp
+
 @section('page_title', __('voyager::generic.viewing').' '.$dataType->getTranslatedAttribute('display_name_plural'))
 
 @section('page_header')
     <div class="container-fluid">
         <h1 class="page-title">
-            <i class="{{ $dataType->icon }}"></i> {{ $dataType->getTranslatedAttribute('display_name_plural') }}
+            <i class="{{ $dataType->icon }}"></i> {{ $dataType->getTranslatedAttribute('display_name_plural') }} of {{$project->title}} 
         </h1>
         @can('add', app($dataType->model_name))
-            <a href="{{ route('voyager.'.$dataType->slug.'.create') }}" class="btn btn-success btn-add-new">
+            <a href="{{ route('voyager.'.$dataType->slug.'.create') }}?project_id={{request('project_id')}}" class="btn btn-success btn-add-new">
                 <i class="voyager-plus"></i> <span>{{ __('voyager::generic.add_new') }}</span>
             </a>
         @endcan
@@ -17,7 +21,7 @@
         @endcan
         @can('edit', app($dataType->model_name))
             @if(!empty($dataType->order_column) && !empty($dataType->order_display_column))
-                <a href="{{ route('voyager.'.$dataType->slug.'.order') }}" class="btn btn-primary btn-add-new">
+                <a href="{{ route('voyager.'.$dataType->slug.'.order') }}?project_id={{request('project_id')}}" class="btn btn-primary btn-add-new">
                     <i class="voyager-list"></i> <span>{{ __('voyager::bread.order') }}</span>
                 </a>
             @endif
@@ -32,11 +36,6 @@
                 @include('voyager::bread.partials.actions', ['action' => $action, 'data' => null])
             @endif
         @endforeach
-        @if(isset($isBasic))
-        <a href="{{ route('voyager.'.$dataType->slug.'.edit',1) }}" class="btn btn-primary btn-add-new">
-                <i class="voyager-edit"></i> <span>Edit Basic Details</span>
-        </a>
-        @endif
         @include('voyager::multilingual.language-selector')
     </div>
 @stop
@@ -258,18 +257,12 @@
                                             </td>
                                         @endforeach
                                         <td class="no-sort no-click bread-actions">
-                                            @foreach($actions as $action)
-                                                @if (!method_exists($action, 'massAction'))
-                                                    @include('voyager::bread.partials.actions', ['action' => $action])
-                                                @endif
-                                            @endforeach
-                                        <a href="/admin/details?project_id={{$data->id}}" title="View" class="btn btn-sm btn-warning pull-right edit">
-                                            <i class="voyager-file-text"></i> <span class="hidden-xs hidden-sm">Project Blog</span>
-                                        </a>
-                                        
-                                        <a href="/admin/project-resources?project_id={{$data->id}}" title="View" class="btn btn-sm btn-success pull-right view">
-                                            <i class="voyager-categories"></i> <span class="hidden-xs hidden-sm">Project Resources</span>
-                                        </a>
+                                            <a href="javascript:;" title="Delete" class="btn btn-sm btn-danger pull-right delete" data-id="{{$data->id}}" id="delete-{{$data->id}}">
+                                                <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">Delete</span>
+                                            </a>
+                                            <a href="/admin/project-resources/{{$data->id}}/edit?project_id={{Request('project_id')}}" title="Edit" class="btn btn-sm btn-primary pull-right edit">
+                                                <i class="voyager-edit"></i> <span class="hidden-xs hidden-sm">Edit</span>
+                                            </a>
                                         </td>
                                     </tr>
                                     @endforeach

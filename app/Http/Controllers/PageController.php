@@ -16,6 +16,7 @@ use App\Volunteer;
 use App\Donate;
 use App\Homepage;
 use App\Slider;
+use App\ProjectResource;
 
 class PageController extends Controller
 {
@@ -47,6 +48,7 @@ class PageController extends Controller
     {
         $data['item'] = Project::where('slug',$slug)->FirstOrFail();
         $data['blogs'] = ProjectBlog::where('project_id', $data['item']->id)->orderBy('order')->get();
+        $data['resources'] = ProjectResource::where('project_id', $data['item']->id)->orderBy('order')->get();
         return view('pages.projectDetail', $data);
     }
 
