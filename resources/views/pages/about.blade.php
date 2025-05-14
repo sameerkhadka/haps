@@ -86,12 +86,4 @@
         </div>
     </section>
 
-
-    <section class="home__gallery">
-        <div class="homeGallery__wrap">
-            @foreach($global_images as $img)
-            <div class="homeGallery_image"><img src="{{Voyager::image($img->img)}}" alt=""></div>
-            @endforeach
-        </div>
-    </section>
 @endsection
