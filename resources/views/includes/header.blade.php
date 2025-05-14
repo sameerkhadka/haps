@@ -13,9 +13,12 @@
                             </li>
                             <li @if(!Request::segment(1)) class="uk-active @endif"><a href="/">Home</a></li>
                             <li @if(Request::segment(1) == 'about') class="uk-active" @endif><a href="/about">About Us</a></li>
+                            <li @if(Request::segment(1) == 'about') class="uk-active" @endif><a href="/about">CPR</a></li>
+                            <li @if(Request::segment(1) == 'about') class="uk-active" @endif><a href="/about">PCC</a></li>
+                            <li @if(Request::segment(1) == 'about') class="uk-active" @endif><a href="/about">Rural Trauma</a></li>
                             
-                            <li @if(Request::segment(1) == 'projects') class="uk-active" @endif><a href="/projects">HAPSA Projects</a></li>
-                            <li @if(Request::segment(1) == 'news') class="uk-active" @endif><a href="/news" >News Coverage</a></li>
+                            <li @if(Request::segment(1) == 'projects') class="uk-active" @endif><a href="/projects">Other Projects</a></li>
+                            <li @if(Request::segment(1) == 'news') class="uk-active" @endif><a href="/news" >News </a></li>
                             <li @if(Request::segment(1) == 'gallery') class="uk-active" @endif><a href="/gallery">Gallery</a></li>
                             <li @if(Request::segment(1) == 'volunteer') class="uk-active" @endif><a href="/volunteer#faqs">FAQ</a></li>
                         </ul>
