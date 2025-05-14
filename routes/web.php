@@ -27,6 +27,7 @@ Route::get('/volunteer',[PageController::class,'volunteer']);
 Route::get('/donate',[PageController::class,'donate']);
 Route::get('/resources',[PageController::class,'resource']);
 Route::get('/project-blog/{id}',[PageController::class,'projectBlog']);
+Route::post('/change-checkbox',[PageController::class,'updateCheckbox']);
 
 
 Route::group(['prefix' => 'admin'], function () {

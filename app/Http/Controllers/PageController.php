@@ -40,7 +40,7 @@ class PageController extends Controller
     public function project()
     {
         $data['item'] = Project::find(1);
-        $data['projects'] = Project::orderBy('order')->get()->except(1);
+        $data['projects'] = Project::where('show_on_menu', '!=', 1)->orderBy('order')->get()->except(1);
         return view('pages.projects', $data);
     }
 
@@ -100,5 +100,16 @@ class PageController extends Controller
     public function contact()
     {
         return view('pages.contact');
+    }
+    
+    public function updateCheckbox(Request $request){
+        $status = $request->status;
+        $field = $request->field;
+        $id = $request->id;
+        $model = $request->model;
+        $mydata = $model::find($id);
+        $mydata->{$field} = $status;
+        $mydata->update();
+        return response(['success'=>true,'msg'=>'Successfully Updated!'],200);
     }
 }
