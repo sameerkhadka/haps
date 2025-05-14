@@ -14,7 +14,7 @@
                             <li @if(!Request::segment(1)) class="uk-active @endif"><a href="/">Home</a></li>
                             <li @if(Request::segment(1) == 'about') class="uk-active" @endif><a href="/about">About Us</a></li>
                             @foreach($global_project as $pro)
-                            <li @if(Request::segment(2) == $pro->slug) class="uk-active" @endif><a href="/projects/{{$pro->slug}}">{{$pro->title}}</a></li>
+                            <li @if(Request::segment(2) == $pro->slug) class="uk-active" @endif><a href="/projects/{{$pro->slug}}">{{$pro->menu_title}}</a></li>
                             @endforeach
                             
                             <li @if(!Request::segment(2) && Request::segment(1) == 'projects') class="uk-active" @endif><a href="/projects">Other Projects</a></li>
