@@ -73,7 +73,6 @@
             <div class="resources_card uk-margin-medium-top">
                 <div class="uk-grid uk-child-width-1-3@m uk-child-width-1-2@s">
                     @foreach($resources as $res)
-                    @if($res->file != null && $res->file != '[]')
                     <div class="uk-transition-toggle">  
                         <div class="project__card">
                             <div class="projectCard__image">
@@ -84,14 +83,19 @@
                                     <h4>{{$res->title}}</h4>
                                     <div class="cta">
                                         <div class="inCard">
-                                            <a href="{{$res->link ?? '/storage/'.json_decode($res->file)[0]->download_link}}" target="blank">Explore</a>
+                                            @if($res->link)
+                                                <a href="{{$res->link }}" target="blank">Explore</a>
+                                            @elseif($res->file != null && $res->file != '[]')
+                                                <a href="{{'/storage/'.json_decode($res->file)[0]->download_link }}" target="blank">Explore</a>
+                                            @else
+                                                <a href="#" target="blank">Explore</a>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    @endif
                     @endforeach
                 </div>
             </div>
