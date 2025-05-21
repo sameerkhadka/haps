@@ -173,15 +173,14 @@
                                                         {{ $data->{$row->field} }}
                                                     @endif
                                                 @elseif($row->type == 'checkbox')
-                                                    @if(property_exists($row->details, 'on') && property_exists($row->details, 'off'))
-                                                        @if($data->{$row->field})
-                                                            <span class="label label-info">{{ $row->details->on }}</span>
-                                                        @else
-                                                            <span class="label label-primary">{{ $row->details->off }}</span>
-                                                        @endif
+                                                    @if ($data->{$row->field} == 1)
+                                                            <?php $checked = 'checked'; ?>
                                                     @else
-                                                    {{ $data->{$row->field} }}
+                                                        <?php $checked = ' '; ?>
                                                     @endif
+                                                    <input type="checkbox" class="myCheckBox"
+                                                        data-field="{{ $row->field }}" data-id="{{ $data->id }}"
+                                                        {{ $checked }} style="margin: 4px 19px 0 !important;">
                                                 @elseif($row->type == 'color')
                                                     <span class="badge badge-lg" style="background-color: {{ $data->{$row->field} }}">{{ $data->{$row->field} }}</span>
                                                 @elseif($row->type == 'text')
@@ -334,6 +333,25 @@
     @if(!$dataType->server_side && config('dashboard.data_tables.responsive'))
         <script src="{{ voyager_asset('lib/js/dataTables.responsive.min.js') }}"></script>
     @endif
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"
+        integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        let checkBoxes = document.getElementsByClassName('myCheckBox');
+        checkBoxes.forEach(checkbox => {
+            checkbox.addEventListener('click', (e) => {
+                let status = e.target.checked ? 1 : 0;
+                let id = e.target.getAttribute('data-id');
+                let field = e.target.getAttribute('data-field');
+                axios.post('/change-checkbox', {
+                    status,
+                    id,
+                    field,
+                    model: "\\App\\Project"
+                })
+            })
+        })
+    </script>
     <script>
         $(document).ready(function () {
             @if (!$dataType->server_side)

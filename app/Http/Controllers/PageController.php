@@ -101,4 +101,15 @@ class PageController extends Controller
     {
         return view('pages.contact');
     }
+    
+    public function updateCheckbox(Request $request){
+        $status = $request->status;
+        $field = $request->field;
+        $id = $request->id;
+        $model = $request->model;
+        $mydata = $model::find($id);
+        $mydata->{$field} = $status;
+        $mydata->update();
+        return response(['success'=>true,'msg'=>'Successfully Updated!'],200);
+    }
 }

@@ -36,6 +36,7 @@
             <div class="projectsSlider__wrap">
                 <div class="uk-grid uk-child-width-1-3@m uk-child-width-1-2@s home__projects">
                     @foreach($projects as $project)
+                    @if($project->show_on_menu != 1)
                     <div class="uk-transition-toggle">  
                         <div class="project__card">
                             <div class="projectCard__image">
@@ -53,6 +54,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                     @endforeach
                 </div>
             </div>

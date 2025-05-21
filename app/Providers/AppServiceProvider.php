@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Photo;
 use App\Faq;
 use App\Testimonial;
+use App\Project;
 use View;
 
 class AppServiceProvider extends ServiceProvider
@@ -32,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
         $data['global_images'] = Photo::orderBy('order')->get();
         $data['faqs'] = Faq::find(1);
         $data['testimonial'] = Testimonial::find(1);
+        $data['global_project'] = Project::where('show_on_menu', 1)->orderBy('order')->get();
         View::share($data);
     }
 }

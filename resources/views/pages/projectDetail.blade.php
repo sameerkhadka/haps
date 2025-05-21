@@ -83,7 +83,13 @@
                                     <h4>{{$res->title}}</h4>
                                     <div class="cta">
                                         <div class="inCard">
-                                            <a href="{{$res->link ?? '/storage/'.json_decode($res->file)[0]->download_link}}" target="blank">Explore</a>
+                                            @if($res->link)
+                                                <a href="{{$res->link }}" target="blank">Explore</a>
+                                            @elseif($res->file != null && $res->file != '[]')
+                                                <a href="{{'/storage/'.json_decode($res->file)[0]->download_link }}" target="blank">Explore</a>
+                                            @else
+                                                <a href="#" target="blank">Explore</a>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
