@@ -17,7 +17,7 @@
     <div class="video__wrap" uk-tooltip="title: View CPR Song; delay: 200">
         
         <a href="{{$item->banner_btn_link}}" target="_blank" class="btn">
-            <video src="./images/videoplayback.mp4" controls loop autoplay></video>
+            <video src="./images/videoplayback.mp4" controls loop ></video>
         </a>
            
         <!-- <div class="watch__video">
@@ -235,6 +235,38 @@
         </div>
     </section> -->
 
+
+    <section class="partners p-1">
+        <div class="uk-container">
+            <div class="uk-text-center@s">
+                <h2>Partners and Collaborators</h2>
+                <p class="uk-text-center@s">
+                HAPSA works hand-in-hand with a diverse network of partners and collaborators, including government bodies, local communities, health institutions, and international organizations. These strategic alliances help us amplify our impact, share resources, and co-create sustainable, community-driven health solutions. Together, we are building a stronger, more equitable healthcare system
+                </p>
+            </div>
+            <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-flex-center uk-margin-medium-top">
+                
+                <div class="logo uk-text-center uk-margin-medium-top">
+                    <img src="{{asset('images/apf.png')}}" alt="">
+                </div>
+                <div class="logo uk-text-center uk-margin-medium-top">
+                    <img src="{{asset('images/hamroteam.png')}}" alt="">
+                </div>
+                <div class="logo uk-text-center uk-margin-medium-top">
+                    <img src="{{asset('images/americanepal.png')}}" alt="">
+                </div>
+                <div class="logo uk-text-center uk-margin-medium-top">
+                    <img src="{{asset('images/brownuni.png')}}" alt="">
+                </div>
+                <div class="logo uk-text-center uk-margin-medium-top">
+                    <img src="{{asset('images/nayahealth.png')}}" alt="">
+                </div>
+                <div class="logo uk-text-center uk-margin-medium-top">
+                    <img src="{{asset('images/nepalmedics.png')}}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="home__gallery">
         <div class="homeGallery__wrap">

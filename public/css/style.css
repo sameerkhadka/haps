@@ -921,6 +921,10 @@ nav .uk-navbar-left .uk-navbar-nav li:first-child {
   height: 280px;
 }
 
+.partners .logo img {
+  max-height: 102px;
+}
+
 .homeGallery__wrap {
   display: grid;
   grid-template-columns: repeat(6, 1fr);

@@ -86,8 +86,10 @@
                     <ul class="uk-nav">
                         <li class="uk-active"><a href="/">Home</a></li>
                         <li><a href="/about">About Us</a></li>
-                        
-                        <li><a href="/projects">HAPSA Projects</a></li>
+                        <li><a href="/about">CPR</a></li>
+                        <li><a href="/about">PCC</a></li>
+                        <li><a href="/about">Rural trauma</a></li>
+                        <li><a href="/projects">Other Projects</a></li>
                         <li><a href="/news" >News Coverage</a></li>
                         <li><a href="/gallery">Gallery</a></li>
                         <li><a href="/volunteer#faqs">FAQ</a></li>
