@@ -17,7 +17,7 @@
                             <li @if(Request::segment(2) == $pro->slug) class="uk-active" @endif><a href="/projects/{{$pro->slug}}">{{$pro->menu_title}}</a></li>
                             @endforeach
                             
-                            <li @if(!Request::segment(2) && Request::segment(1) == 'projects') class="uk-active" @endif><a href="/projects">Other Projects</a></li>
+                            <li @if(!Request::segment(2) && Request::segment(1) == 'projects') class="uk-active" @endif><a href="/projects">Disaster Response</a></li>
                             <li @if(Request::segment(1) == 'news') class="uk-active" @endif><a href="/news" >News </a></li>
                             <li @if(Request::segment(1) == 'gallery') class="uk-active" @endif><a href="/gallery">Gallery</a></li>
                             <li @if(Request::segment(1) == 'volunteer') class="uk-active" @endif><a href="/volunteer#faqs">FAQ</a></li>
@@ -86,10 +86,10 @@
                     <ul class="uk-nav">
                         <li class="uk-active"><a href="/">Home</a></li>
                         <li><a href="/about">About Us</a></li>
-                        <li><a href="/about">CPR</a></li>
-                        <li><a href="/about">PCC</a></li>
-                        <li><a href="/about">Rural trauma</a></li>
-                        <li><a href="/projects">Other Projects</a></li>
+                        <li><a href="/projects/nepal-life-savers-programme">CPR</a></li>
+                        <li><a href="/projects/poison-center-collaborative">PCC</a></li>
+                        <li><a href="/projects/rural-trauma-care">Rural trauma</a></li>
+                        <li><a href="/projects">Disaster Response</a></li>
                         <li><a href="/news" >News Coverage</a></li>
                         <li><a href="/gallery">Gallery</a></li>
                         <li><a href="/volunteer#faqs">FAQ</a></li>

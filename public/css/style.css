@@ -32,6 +32,10 @@ a:hover {
   text-decoration: none;
 }
 
+p a {
+  text-transform: none !important;
+}
+
 h1,
 h2,
 h3,
@@ -332,9 +336,34 @@ nav .uk-navbar-left .uk-navbar-nav li:first-child {
   }
 }
 
-@media (min-width: 960px) {
-  .uk-navbar-left, .uk-navbar-right {
+@media screen and (max-width: 1395px) {
+  .uk-navbar .uk-navbar-left .uk-navbar-nav {
+    gap: 22px;
+  }
+}
+@media (max-width: 1336px) {
+  header .cta a.btn {
+    max-width: 120px;
+    min-width: 110px;
+  }
+  .uk-navbar-right {
+    gap: 14px;
+  }
+  .uk-navbar-right span.uk-icon {
+    width: 18px;
+  }
+}
+@media screen and (max-width: 1260px) {
+  .uk-navbar .uk-navbar-left .uk-navbar-nav {
+    gap: 19px;
+  }
+}
+@media screen and (max-width: 1184px) {
+  .uk-navbar .uk-navbar-left .uk-navbar-nav {
     gap: 18px;
+  }
+  .uk-navbar-nav > li > a {
+    font-size: 12px;
   }
 }
 @media (max-width: 640px) {
