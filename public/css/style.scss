@@ -43,11 +43,35 @@ a {
     }
 }
 
-p a{
+.main__content p a{
 
     text-transform: none !important;
+    word-break: break-word;   
+    position: relative; 
+    font-size: 16px;  
+    
+    &::after{
+
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100%;
+        background-color: #141c3b7e;
+        content: '';
+        height: 1px;
+        font-weight: 400;
+        transition: 0.4s;
+    }
+
+    &:hover::after{
+
+        width: 0;
+    }
 }
 
+figure figcaption{
+    text-align: center;
+}
 
 h1,
 h2,
