@@ -30,7 +30,9 @@
                             </li>
                             @endforeach
                             
-                            <li @if(!Request::segment(2) && Request::segment(1) == 'projects') class="uk-active" @endif><a href="/projects">Disaster Response</a></li>
+                            <li @if(!Request::segment(2) && Request::segment(1) == 'projects') class="uk-active" @endif>
+                                <a href="/projects">Disaster Response</a>
+                            </li>
                             
                         </ul>
 
@@ -45,15 +47,6 @@
                     </div>
 
                     <div class="uk-navbar-right">
-                        <!-- <a href="{{setting('contact-us.facebook')}}" class="uk-navbar-item" target="_blank">
-                            <span uk-icon="icon: facebook" class="uk-icon"></span>
-                        </a>
-                        <a href="{{setting('contact-us.youtube')}}" class="uk-navbar-item" target="_blank">
-                            <span uk-icon="icon: youtube" class="uk-icon"></span>
-                        </a>
-                        <a href="{{setting('contact-us.instagram')}}" class="uk-navbar-item" target="_blank">
-                            <span uk-icon="icon: instagram" class="uk-icon"></span>
-                        </a> -->
                         <div class="cta">
                             <a href="/donate" class="btn">Donate</a>
                         </div>
@@ -109,7 +102,7 @@
                             </div>
                         </li>
                         <li>
-                            <a>Nepal Life Savers Program <span uk-drop-parent-icon></span></a>
+                            <a href="">Nepal Life Savers Program <span uk-drop-parent-icon></span></a>
                             <div uk-dropdown="mode: click" class="uk-navbar-dropdown uk-drop">
                                 <ul class="uk-nav uk-dropdown-nav">
                                     <li><a href="/" >Cardiac Arrest Registry</a></li>
@@ -144,11 +137,12 @@
                             </div>
                         </li>
                         <li>
-                            <a>Disaster Response <span uk-drop-parent-icon></span></a>
+                            <a href="">Disaster Response <span uk-drop-parent-icon></span></a>
                             <div class="uk-navbar-dropdown uk-drop">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li><a href="/">2015 Earthquake</a></li>
-                                    <li><a href="/">Other Projects
+                                    <li><a href="/">Other Projects</a></li>
+                                </ul>
                             </div>
                         </li>
                     </ul>
