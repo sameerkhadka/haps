@@ -69,7 +69,7 @@ a {
     }
 }
 
-figure figcaption{
+figure, figcaption{
     text-align: center;
 }
 
@@ -229,7 +229,7 @@ img {
 
 
 @media (max-width: 1025px) {
-    .uk-navbar-nav {
+    .uk-subnav {
         gap: 16px;
     }  
     .uk-container {
@@ -349,17 +349,68 @@ img {
     }
 }
 
-.uk-navbar-nav>li>a {
+
+.uk-subnav {
+    gap: 30px;
+}
+
+.uk-subnav>*>:first-child{
     
     color: $text;
     height: 100%;
+    font-family: "Work sans";
+
+    span.uk-icon{
+        
+        color: $text;
+    }
+
+    &:hover {
+        color: $light;
+
+        span.uk-icon{
+            
+            color: $light;
+        }
+    }
+}
+
+.uk-dropdown-nav>li>a {
+    color: $text;
+    font-family: "Work sans";
+    font-weight: 400;
+    
+    &:hover {
+        color: $light;
+    }
+}
+
+.uk-navbar-dropdown-nav>li>a{
+    
+    color: $text;
     font-family: "Work sans";
     &:hover {
         color: $light;
     }
 }
 
-.uk-navbar-nav>li.uk-active>a {
+.uk-offcanvas-bar {
+
+    .uk-dropdown-nav>li:first-child{
+        
+        margin-top: 0;
+
+    }
+
+    span.uk-icon{
+
+        color: $white;
+    }
+}
+
+
+
+.uk-subnav>li.uk-active>a {
     color: $light;
 }
 
@@ -382,7 +433,7 @@ nav{
         width: 100px;
     }
 
-    .uk-navbar-left .uk-navbar-nav li:first-child{
+    .uk-navbar-left .uk-subnav li:first-child{
 
         margin-right: 8px;
     }
@@ -407,7 +458,7 @@ nav{
 
 
 @media screen and (max-width: 1395px) {
-    .uk-navbar .uk-navbar-left .uk-navbar-nav {
+    .uk-navbar .uk-navbar-left .uk-subnav {
         gap: 22px ;
     }
 }
@@ -432,17 +483,17 @@ nav{
 
 
 @media screen and (max-width: 1260px) {
-    .uk-navbar .uk-navbar-left .uk-navbar-nav {
+    .uk-navbar .uk-navbar-left .uk-subnav {
         gap: 19px ;
     }
 }
 
 @media screen and (max-width: 1184px) {
-    .uk-navbar .uk-navbar-left .uk-navbar-nav {
+    .uk-navbar .uk-navbar-left .uk-subnav {
         gap: 18px ;
     }
 
-    .uk-navbar-nav > li > a {
+    .uk-subnav > li > a {
     
         font-size: 12px;
     }
@@ -1844,6 +1895,12 @@ footer{
 
         width: 100%;
         height: 72vh;
+            max-height: 100vh;
+
+        @media screen and (max-width: 1320px) {
+            
+            height: auto;
+        }
     }
 
     .sub__content{

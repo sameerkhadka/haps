@@ -53,7 +53,7 @@ a:hover {
   width: 0;
 }
 
-figure figcaption {
+figure, figcaption {
   text-align: center;
 }
 
@@ -219,7 +219,7 @@ img {
   }
 }
 @media (max-width: 1025px) {
-  .uk-navbar-nav {
+  .uk-subnav {
     gap: 16px;
   }
   .uk-container {
@@ -316,16 +316,50 @@ img {
   }
 }
 
-.uk-navbar-nav > li > a {
+.uk-subnav {
+  gap: 30px;
+}
+
+.uk-subnav > * > :first-child {
   color: #08133d;
   height: 100%;
   font-family: "Work sans";
 }
-.uk-navbar-nav > li > a:hover {
+.uk-subnav > * > :first-child span.uk-icon {
+  color: #08133d;
+}
+.uk-subnav > * > :first-child:hover {
+  color: #c0391a;
+}
+.uk-subnav > * > :first-child:hover span.uk-icon {
   color: #c0391a;
 }
 
-.uk-navbar-nav > li.uk-active > a {
+.uk-dropdown-nav > li > a {
+  color: #08133d;
+  font-family: "Work sans";
+  font-weight: 400;
+}
+.uk-dropdown-nav > li > a:hover {
+  color: #c0391a;
+}
+
+.uk-navbar-dropdown-nav > li > a {
+  color: #08133d;
+  font-family: "Work sans";
+}
+.uk-navbar-dropdown-nav > li > a:hover {
+  color: #c0391a;
+}
+
+.uk-offcanvas-bar .uk-dropdown-nav > li:first-child {
+  margin-top: 0;
+}
+.uk-offcanvas-bar span.uk-icon {
+  color: #ffffff;
+}
+
+.uk-subnav > li.uk-active > a {
   color: #c0391a;
 }
 
@@ -343,7 +377,7 @@ nav {
 nav img {
   width: 100px;
 }
-nav .uk-navbar-left .uk-navbar-nav li:first-child {
+nav .uk-navbar-left .uk-subnav li:first-child {
   margin-right: 8px;
 }
 @media (max-width: 640px) {
@@ -358,7 +392,7 @@ nav .uk-navbar-left .uk-navbar-nav li:first-child {
 }
 
 @media screen and (max-width: 1395px) {
-  .uk-navbar .uk-navbar-left .uk-navbar-nav {
+  .uk-navbar .uk-navbar-left .uk-subnav {
     gap: 22px;
   }
 }
@@ -375,15 +409,15 @@ nav .uk-navbar-left .uk-navbar-nav li:first-child {
   }
 }
 @media screen and (max-width: 1260px) {
-  .uk-navbar .uk-navbar-left .uk-navbar-nav {
+  .uk-navbar .uk-navbar-left .uk-subnav {
     gap: 19px;
   }
 }
 @media screen and (max-width: 1184px) {
-  .uk-navbar .uk-navbar-left .uk-navbar-nav {
+  .uk-navbar .uk-navbar-left .uk-subnav {
     gap: 18px;
   }
-  .uk-navbar-nav > li > a {
+  .uk-subnav > li > a {
     font-size: 12px;
   }
 }
@@ -1369,6 +1403,12 @@ footer .footer__end .footerEnd__section .uk-flex {
 .content__detail img {
   width: 100%;
   height: 72vh;
+  max-height: 100vh;
+}
+@media screen and (max-width: 1320px) {
+  .content__detail img {
+    height: auto;
+  }
 }
 .content__detail .sub__content img {
   width: 100%;
