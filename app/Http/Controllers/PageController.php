@@ -40,7 +40,7 @@ class PageController extends Controller
     public function project()
     {
         $data['item'] = Project::find(1);
-        $data['projects'] = Project::orderBy('order')->get()->except(1);
+        $data['projects'] = Project::where('category_id',4)->where('other_projects',1)->orderBy('order')->get()->except(1);
         return view('pages.projects', $data);
     }
 

@@ -1,14 +1,18 @@
 @extends('voyager::master')
+@php
+    $title = \App\Category::find(request('category_id'))->title;    
+@endphp
 
-@section('page_title', __('voyager::generic.viewing').' '.$dataType->getTranslatedAttribute('display_name_plural'))
+
+@section('page_title', "View {$title}")
 
 @section('page_header')
     <div class="container-fluid">
         <h1 class="page-title">
-            <i class="{{ $dataType->icon }}"></i> {{ $dataType->getTranslatedAttribute('display_name_plural') }}
+            <i class="{{ $dataType->icon }}"></i> {{ $title }}
         </h1>
         @can('add', app($dataType->model_name))
-            <a href="{{ route('voyager.'.$dataType->slug.'.create') }}" class="btn btn-success btn-add-new">
+            <a href="{{ route('voyager.'.$dataType->slug.'.create') }}?category_id={{request('category_id')}}" class="btn btn-success btn-add-new">
                 <i class="voyager-plus"></i> <span>{{ __('voyager::generic.add_new') }}</span>
             </a>
         @endcan
@@ -17,7 +21,7 @@
         @endcan
         @can('edit', app($dataType->model_name))
             @if(!empty($dataType->order_column) && !empty($dataType->order_display_column))
-                <a href="{{ route('voyager.'.$dataType->slug.'.order') }}" class="btn btn-primary btn-add-new">
+                <a href="{{ route('voyager.'.$dataType->slug.'.order') }}?category_id={{request('category_id')}}" class="btn btn-primary btn-add-new">
                     <i class="voyager-list"></i> <span>{{ __('voyager::bread.order') }}</span>
                 </a>
             @endif
@@ -32,9 +36,9 @@
                 @include('voyager::bread.partials.actions', ['action' => $action, 'data' => null])
             @endif
         @endforeach
-        @if(isset($isBasic))
-        <a href="{{ route('voyager.'.$dataType->slug.'.edit',1) }}" class="btn btn-primary btn-add-new">
-                <i class="voyager-edit"></i> <span>Edit Basic Details</span>
+        @if(isset($isBasic) && request('category_id') == 4)
+        <a href="{{ route('voyager.'.$dataType->slug.'.edit',1) }}?category_id={{request('category_id')}}" class="btn btn-primary btn-add-new">
+                <i class="voyager-edit"></i> <span>Edit Basic Details of Other Projects</span>
         </a>
         @endif
         @include('voyager::multilingual.language-selector')
@@ -89,11 +93,12 @@
                                             </th>
                                         @endif
                                         @foreach($dataType->browseRows as $row)
+                                        
                                         <th>
                                             @if ($isServerSide && in_array($row->field, $sortableColumns))
                                                 <a href="{{ $row->sortByUrl($orderBy, $sortOrder) }}">
                                             @endif
-                                            {{ $row->getTranslatedAttribute('display_name') }}
+                                            @if(Request('category_id') != 4 && $row->getTranslatedAttribute('display_name') == 'Other Projects')  @else {{ $row->getTranslatedAttribute('display_name') }}  @endif
                                             @if ($isServerSide)
                                                 @if ($row->isCurrentSortField($orderBy))
                                                     @if ($sortOrder == 'asc')
@@ -173,6 +178,7 @@
                                                         {{ $data->{$row->field} }}
                                                     @endif
                                                 @elseif($row->type == 'checkbox')
+                                                @if(Request('category_id') != 4) @continue @endif
                                                     @if ($data->{$row->field} == 1)
                                                             <?php $checked = 'checked'; ?>
                                                     @else
@@ -256,19 +262,22 @@
                                                 @endif
                                             </td>
                                         @endforeach
-                                        <td class="no-sort no-click bread-actions">
-                                            @foreach($actions as $action)
-                                                @if (!method_exists($action, 'massAction'))
-                                                    @include('voyager::bread.partials.actions', ['action' => $action])
-                                                @endif
-                                            @endforeach
-                                        <a href="/admin/details?project_id={{$data->id}}" title="View" class="btn btn-sm btn-warning pull-right edit">
-                                            <i class="voyager-file-text"></i> <span class="hidden-xs hidden-sm">Project Blog</span>
-                                        </a>
-                                        
-                                        <a href="/admin/project-resources?project_id={{$data->id}}" title="View" class="btn btn-sm btn-success pull-right view">
-                                            <i class="voyager-categories"></i> <span class="hidden-xs hidden-sm">Project Resources</span>
-                                        </a>
+                                        <td class="no-sort no-click bread-actions">                                            
+                                            <a href="javascript:;" title="Delete" class="btn btn-sm btn-danger pull-right delete" data-id="{{$data->id}}" id="delete-{{$data->id}}">
+                                                <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm"></span>
+                                            </a>
+
+                                            <a href="/admin/projects/{{$data->id}}/edit?category_id={{request('category_id')}}" title="Edit" class="btn btn-sm btn-primary pull-right edit">
+                                                <i class="voyager-edit"></i> <span class="hidden-xs hidden-sm"></span>Edit
+                                            </a>
+
+                                            <a href="/admin/details?project_id={{$data->id}}" title="View" class="btn btn-sm btn-warning pull-right edit">
+                                                <i class="voyager-file-text"></i> <span class="hidden-xs hidden-sm">Project Blog</span>
+                                            </a>
+                                            
+                                            <a href="/admin/project-resources?project_id={{$data->id}}" title="View" class="btn btn-sm btn-success pull-right view">
+                                                <i class="voyager-categories"></i> <span class="hidden-xs hidden-sm">Project Resources</span>
+                                            </a>
                                         </td>
                                     </tr>
                                     @endforeach
