@@ -46,7 +46,7 @@
     </section>
 
 
-    <section class="gallery p-1">
+    <section class="gallery p-1"  id="photo">
         <div class="uk-container">
             <h1>Photo Gallery</h1>
             <div class="gallerySection__wrap uk-margin-large-top">

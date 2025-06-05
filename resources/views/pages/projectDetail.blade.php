@@ -20,7 +20,8 @@
             </div>
             @endif
             @if($item->cover)
-            <img src="{{Voyager::image($item->cover)}}" alt="">
+            <img src="{{Voyager::image($item->cover)}}" alt="{{$item->cover_title}}">
+            <!-- Caption ko cover --><p> {{$item->cover_title}} </p>
             @endif
             <div class="main__content uk-margin-medium-top">
                {!!$item->description!!}

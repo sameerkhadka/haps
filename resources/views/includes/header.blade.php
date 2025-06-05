@@ -11,28 +11,42 @@
                                     <img class="full" src="{{Voyager::image(setting('site.logo'))}}" alt="{{setting('site.title')}}">
                                 </a>
                             </li>
-                            <li @if(!Request::segment(1)) class="uk-active @endif"><a href="/">Home</a></li>
-                            <li @if(Request::segment(1) == 'about') @endif>
+                            <li @if(!Request::segment(1)) class="uk-active" @endif><a href="/">Home</a></li>
+                            <li @if(Request::segment(1) == 'about' || Request::segment(1) == 'news' || Request::segment(1) == 'gallery' || Request::segment(1) == 'volunteer') class="uk-active" @endif>
                                 <a href>About <span uk-drop-parent-icon></span></a>
                                 <div class="uk-dropdown">
                                     <ul class="uk-nav uk-dropdown-nav">
-                                        <li @if(Request::segment(1) == 'about') class="uk-active" @endif><a href="/about" >About Us</a></li>
-                                        <li @if(Request::segment(1) == 'news') class="uk-active" @endif><a href="/news" >News </a></li>
-                                        <li @if(Request::segment(1) == 'gallery') class="uk-active" @endif><a href="/gallery">Photo Gallery</a></li>
-                                        <li @if(Request::segment(1) == 'gallery') class="uk-active" @endif><a href="/gallery">Video Gallery</a></li>
-                                        <li @if(Request::segment(1) == 'volunteer') class="uk-active" @endif><a href="/volunteer#faqs">FAQ</a></li>
+                                        <li><a href="/about" >About Us</a></li>
+                                        <li><a href="/news" >News </a></li>
+                                        <li><a href="/gallery#photo">Photo Gallery</a></li>
+                                        <li><a href="/gallery">Video Gallery</a></li>
+                                        <li><a href="/volunteer#faqs">FAQ</a></li>
                                     </ul>
                                 </div>
                             </li>
                             @foreach($global_project as $pro)
-                            <li @if(Request::segment(2) == $pro->slug) class="uk-active" @endif>
-                                <a href="/projects/{{$pro->slug}}">{{$pro->menu_title}}</a>
-                            </li>
+                            <li @if(Request::segment(2) && collect($pro->projects)->pluck('slug')->contains(Request::segment(2))) class="uk-active" @endif >
+                                <a href>{{$pro->title}}<span uk-drop-parent-icon></span></a>
+                                <div class="uk-dropdown">
+                                    @if($pro->id == 4)
+                                    <ul class="uk-nav uk-dropdown-nav">
+                                        @foreach($pro->projects as $item)
+                                        @if($item->other_projects != 1)
+                                        <li><a href="/projects/{{$item->slug}}" >{{$item->title}}</a></li>
+                                        @endif
+                                        @endforeach
+                                        <li><a href="/other-projects" >Other Projects</a></li>
+                                    </ul>  
+                                    @else
+                                    <ul class="uk-nav uk-dropdown-nav">
+                                        @foreach($pro->projects as $item)
+                                        <li><a href="/projects/{{$item->slug}}" >{{$item->title}}</a></li>
+                                        @endforeach
+                                    </ul>    
+                                    @endif               
+                                </div>
+                            </li>   
                             @endforeach
-                            
-                            <li @if(!Request::segment(2) && Request::segment(1) == 'projects') class="uk-active" @endif>
-                                <a href="/projects">Disaster Response</a>
-                            </li>
                             
                         </ul>
 
@@ -88,6 +102,7 @@
                 <button class="uk-offcanvas-close uk-icon uk-close" type="button" uk-close=""></button>
                 <div class="uk-panel uk-margin-medium-top">
                     <ul uk-dropnav delay-hide="400ms" class="uk-nav">
+                        
                         <li><a href="/">Home</a></li>
                         <li>
                             <a href="">About <span uk-drop-parent-icon></span></a>
@@ -95,58 +110,35 @@
                                 <ul class="uk-nav uk-dropdown-nav">
                                     <li><a href="/about" >About Us</a></li>
                                     <li><a href="/news" >News Coverage</a></li>
-                                    <li><a href="/gallery" >Photo Gallery</a></li>
+                                    <li><a href="/galleryy#photo" >Photo Gallery</a></li>
                                     <li><a href="/gallery" >Video Gallery</a></li>
                                     <li><a href="/volunteer#faqs">FAQ</a></li>
                                 </ul>
                             </div>
                         </li>
-                        <li>
-                            <a href="">Nepal Life Savers Program <span uk-drop-parent-icon></span></a>
-                            <div uk-dropdown="mode: click" class="uk-navbar-dropdown uk-drop">
-                                <ul class="uk-nav uk-dropdown-nav">
-                                    <li><a href="/" >Nepal Life Savers Program</a></li>
-                                    <li><a href="/" >CPR Training</a></li>
-                                    <li><a href="/" >Cardiac Arrest Registry</a></li>
-                                    <li><a href="/">International Life Savers Program</a></li>
-                                    <li><a href="/">Workshop and findings</a></li>
-                                    <li><a href="/">Launch of Nepali CPR Song</a></li>
-                                </ul>                   
-                            </div>
-                        </li>                  
-                        <li>
-                            <a href="">PCC <span uk-drop-parent-icon></span></a>
-                            <div class="uk-navbar-dropdown uk-drop">
-                                <ul class="uk-nav uk-dropdown-nav">
-                                    <li><a href="/" >Poison Information Center</a></li>
-                                    <li><a href="/">National & Global Collaboration</a></li>
-                                    <li><a href="/">Education & Awareness</a></li>
-                                    <li><a href="/">Research</a></li>
-                                    <li><a href="/">International Presentations</a></li>
-                                </ul>                   
-                            </div>
-                        </li>
-                        <li>
-                            <a href="">Rural trauma <span uk-drop-parent-icon></span></a>
-                            <div class="uk-navbar-dropdown uk-drop">
-                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li><a href="/" >Community Health Workers</a></li>
-                                    <li><a href="/" >Research</a></li>
-                                    <li><a href="/" >Ultrasound</a></li>
-                                    <li><a href="/" >Videos with Global Health Media</a></li>
-                                    <li><a href="/" >International faculty/ Visitor</a></li>
-                                </ul>                   
-                            </div>
-                        </li>
-                        <li>
-                            <a href="">Disaster Response <span uk-drop-parent-icon></span></a>
-                            <div class="uk-navbar-dropdown uk-drop">
-                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li><a href="/">2015 Earthquake</a></li>
-                                    <li><a href="/">Other Projects</a></li>
-                                </ul>
-                            </div>
-                        </li>
+                        @foreach($global_project as $pro)
+                            <li>
+                                <a href="">{{$pro->title}}<span uk-drop-parent-icon></span></a>
+                                <div uk-dropdown="mode: click" class="uk-navbar-dropdown uk-drop">
+                                    @if($pro->id == 4)
+                                    <ul class="uk-nav uk-dropdown-nav">
+                                        @foreach($pro->projects as $item)
+                                        @if($item->other_projects != 1)
+                                        <li><a href="/projects/{{$item->slug}}" >{{$item->title}}</a></li>
+                                        @endif
+                                        @endforeach
+                                        <li><a href="/other-projects" >Other Projects</a></li>
+                                    </ul>  
+                                    @else
+                                    <ul class="uk-nav uk-dropdown-nav">
+                                        @foreach($pro->projects as $item)
+                                        <li><a href="/projects/{{$item->slug}}" >{{$item->title}}</a></li>
+                                        @endforeach
+                                    </ul>    
+                                    @endif               
+                                </div>
+                            </li>   
+                        @endforeach
                     </ul>
                 </div>
               </div>
