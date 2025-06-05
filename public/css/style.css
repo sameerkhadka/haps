@@ -569,7 +569,7 @@ nav .uk-navbar-left .uk-subnav li:first-child {
 .music-control .options > * {
   border: 1px solid #fff;
   width: 100%;
-  padding: 14px 0;
+  padding: 20px 0;
   font-size: 13px;
   font-weight: 500;
   line-height: 1;
@@ -1465,4 +1465,18 @@ footer .footer__end .footerEnd__section .uk-flex {
 .projectGallery_slider .swiper-button-next:hover::after {
   font-size: 16px;
   color: #072e7a;
+}
+
+.popupSection button {
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%) rotate(90deg);
+  left: 24px;
+  background-color: #141c3b;
+  color: #ffffff;
+}
+.popupSection button:hover {
+  background-color: #ffffff;
+  color: #08133d;
+  border-color: #08133d;
 }/*# sourceMappingURL=style.css.map */

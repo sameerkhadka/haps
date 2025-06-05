@@ -15,7 +15,6 @@
         </div>
         <div class="options">
             <a href="{{$item->video_link}}" target="_blank">watch video</a>
-            <button id="play-pause-btn">Pause</button>
         </div>
     </div>
     <audio id="background-music" class="audio" loop>

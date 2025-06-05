@@ -79,9 +79,9 @@
                     <h5>General inquiries</h5>
                     <span>{{setting('contact-us.phone')}}</span>
                 </div>
-                <div class="uk-width-2-3@s uk-margin-large-top">
+                <div class="uk-width-2-3@s">
                     <form class="uk-margin-large-top">
-                        <h3>Join as Someone</h3>
+                        <h3>Join as Volunteer</h3>
                         <div class="uk-grid uk-child-width-1-2@m">
                             <div class="catWrap">
                                 <label>Full Name</label>

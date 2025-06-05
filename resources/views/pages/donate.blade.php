@@ -8,64 +8,12 @@
     
 
 @section('body')
-    <section class="content p-12">
+    <!-- <section class="content p-12">
         <div class="uk-container uk-container-xsmall uk-text-center">
             <h2>{{$item->title}}</h2>
            {!!$item->description!!}
             <div class="cta">
                 <a class="btn" href="{{$item->btn_link}}">{{$item->btn_title}}</a>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="donationDetails p-12">
-        <div class="uk-container">
-            <div class="uk-grid">
-                <div class="uk-width-2-5@s">
-                    <div class="waysToGive">
-                    {!!$item->introduction!!}
-                    </div>
-                </div>
-                <div class="uk-width-1-5@s"></div>
-                <div class="uk-width-2-5@s">
-                    <div uk-sticky="end: true">
-                        <img src="{{Voyager::image($item->image)}}" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="popupSection">
-        <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Open</button>
-
-        <div id="modal-example" uk-modal>
-            <div class="uk-modal-dialog">
-                <img src="{{asset('images/table.png')}}" alt="">
-            </div>
-        </div>
-    </section>
-
-<!-- 
-    <section class="p-12 testimonials">
-        <div class="uk-container">
-            <div class="uk-grid uk-child-width-1-2@s">
-                <div class="title semicontent">
-                    <h1>{{$testimonial->title}}</h1>
-                   {!!$testimonial->intro!!}
-                </div>
-                <div class="content">
-                    {!!$testimonial->description!!}
-                </div>
-            </div>
-            <div class="uk-grid uk-child-width-1-4@m uk-child-width-1-2@s semicontent">
-                @foreach(json_decode($testimonial->testimonials)->body as $test)
-                <div class="revSection uk-margin-large-top">
-                    {!!$test->message!!}
-                    <h5>{{$test->name}}</h5>
-                </div>
-                @endforeach
             </div>
         </div>
     </section> -->
@@ -97,11 +45,64 @@
         </div>
         <div class="uk-container uk-containerxsmall uk-margin-medium-top">
             
-            <div class="gofundme uk-margin-bottom">
-               {!!$item->gofundme!!}
+            <div class="gofundme uk-margin-bottom uk-text-center">
+               <!-- {!!$item->gofundme!!} -->
+               <img src="{{asset('images/paypal.jpeg')}}" style="width:240px">
             </div>
         </div>
     </section>
+
+
+    <section class="donationDetails p-12">
+        <div class="uk-container">
+            <div class="uk-grid">
+                <div class="uk-width-2-5@s">
+                    <div class="waysToGive">
+                    {!!$item->introduction!!}
+                    </div>
+                </div>
+                <div class="uk-width-1-5@s"></div>
+                <div class="uk-width-2-5@s">
+                    <div uk-sticky="end: true">
+                        <img src="{{Voyager::image($item->image)}}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="popupSection">
+        <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Total Registered Doctors</button>
+
+        <div id="modal-example" uk-modal>
+            <div class="uk-modal-dialog">
+                <img src="{{asset('images/table.png')}}" alt="">
+            </div>
+        </div>
+    </section>
+
+<!-- 
+    <section class="p-12 testimonials">
+        <div class="uk-container">
+            <div class="uk-grid uk-child-width-1-2@s">
+                <div class="title semicontent">
+                    <h1>{{$testimonial->title}}</h1>
+                   {!!$testimonial->intro!!}
+                </div>
+                <div class="content">
+                    {!!$testimonial->description!!}
+                </div>
+            </div>
+            <div class="uk-grid uk-child-width-1-4@m uk-child-width-1-2@s semicontent">
+                @foreach(json_decode($testimonial->testimonials)->body as $test)
+                <div class="revSection uk-margin-large-top">
+                    {!!$test->message!!}
+                    <h5>{{$test->name}}</h5>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section> -->
 
 
     <section class="home__gallery">

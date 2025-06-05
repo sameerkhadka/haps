@@ -262,7 +262,22 @@
                     <img src="{{asset('images/nayahealth.png')}}" alt="">
                 </div>
                 <div class="logo uk-text-center uk-margin-medium-top">
+                    <img src="{{asset('images/pakistan.png')}}" alt="">
+                </div>
+                <div class="logo uk-text-center uk-margin-medium-top">
+                    <img src="{{asset('images/dhulikhel.png')}}" alt="">
+                </div>
+                <div class="logo uk-text-center uk-margin-medium-top">
                     <img src="{{asset('images/nepalmedics.png')}}" alt="">
+                </div>
+                <div class="logo uk-text-center uk-margin-medium-top">
+                    <img src="{{asset('images/brownmed.png')}}" alt="">
+                </div>
+                <div class="logo uk-text-center uk-margin-medium-top">
+                    <img src="{{asset('images/janani.png')}}" alt="">
+                </div>
+                <div class="logo uk-text-center uk-margin-medium-top">
+                    <img src="{{asset('images/menat.png')}}" alt="">
                 </div>
             </div>
         </div>

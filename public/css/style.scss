@@ -700,7 +700,7 @@ nav{
             
             border: 1px solid #fff;
             width: 100%;
-            padding: 14px 0;
+            padding: 20px 0;
             font-size: 13px;
             font-weight: 500;
             line-height: 1;
@@ -1982,6 +1982,27 @@ footer{
                 color: $darkblue;
             }
 
+        }
+    }
+}
+
+
+.popupSection{
+
+    button{
+
+        position: fixed;
+        top: 50%;
+        transform: translate(-50%) rotate(90deg);
+        left: 24px;
+        background-color: #141c3b;
+        color: $white;
+
+        &:hover{
+
+            background-color: $white;
+            color: $text;
+            border-color: $text;
         }
     }
 }
