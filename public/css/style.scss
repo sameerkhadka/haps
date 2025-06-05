@@ -229,9 +229,9 @@ img {
 
 
 @media (max-width: 1025px) {
-    .uk-subnav {
-        gap: 16px;
-    }  
+    // .uk-subnav {
+    //     gap: 16px;
+    // }  
     .uk-container {
         padding-left: 28px;
         padding-right: 28px;
@@ -350,9 +350,9 @@ img {
 }
 
 
-.uk-subnav {
-    gap: 30px;
-}
+// .uk-subnav {
+//     gap: 30px;
+// }
 
 .uk-subnav>*>:first-child{
     
@@ -457,11 +457,11 @@ nav{
 
 
 
-@media screen and (max-width: 1395px) {
-    .uk-navbar .uk-navbar-left .uk-subnav {
-        gap: 22px ;
-    }
-}
+// @media screen and (max-width: 1395px) {
+//     .uk-navbar .uk-navbar-left .uk-subnav {
+//         gap: 22px ;
+//     }
+// }
 
 @media (max-width: 1336px){
 
@@ -482,16 +482,16 @@ nav{
 }
 
 
-@media screen and (max-width: 1260px) {
-    .uk-navbar .uk-navbar-left .uk-subnav {
-        gap: 19px ;
-    }
-}
+// @media screen and (max-width: 1260px) {
+//     .uk-navbar .uk-navbar-left .uk-subnav {
+//         gap: 19px ;
+//     }
+// }
 
 @media screen and (max-width: 1184px) {
-    .uk-navbar .uk-navbar-left .uk-subnav {
-        gap: 18px ;
-    }
+    // .uk-navbar .uk-navbar-left .uk-subnav {
+    //     gap: 18px ;
+    // }
 
     .uk-subnav > li > a {
     
