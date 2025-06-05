@@ -79,7 +79,7 @@
                     <h5>General inquiries</h5>
                     <span>{{setting('contact-us.phone')}}</span>
                 </div>
-                <div class="uk-width-2-3@s uk-margin-medium-top">
+                <div class="uk-width-2-3@s uk-margin-large-top">
                     <form class="uk-margin-large-top">
                         <h3>Join as Someone</h3>
                         <div class="uk-grid uk-child-width-1-2@m">
