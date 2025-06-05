@@ -40,7 +40,7 @@
         </div>
     </section>
 
-
+<!-- 
     <section class="p-12 testimonials">
         <div class="uk-container">
             <div class="uk-grid uk-child-width-1-2@s">
@@ -61,7 +61,7 @@
                 @endforeach
             </div>
         </div>
-    </section>
+    </section> -->
 
 
     <section class="volunteerForm p-12" id="volunteerform">

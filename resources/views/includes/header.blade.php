@@ -105,6 +105,8 @@
                             <a href="">Nepal Life Savers Program <span uk-drop-parent-icon></span></a>
                             <div uk-dropdown="mode: click" class="uk-navbar-dropdown uk-drop">
                                 <ul class="uk-nav uk-dropdown-nav">
+                                    <li><a href="/" >Nepal Life Savers Program</a></li>
+                                    <li><a href="/" >CPR Training</a></li>
                                     <li><a href="/" >Cardiac Arrest Registry</a></li>
                                     <li><a href="/">International Life Savers Program</a></li>
                                     <li><a href="/">Workshop and findings</a></li>
@@ -113,7 +115,7 @@
                             </div>
                         </li>                  
                         <li>
-                            <a href="/projects/poison-center-collaborative">PCC <span uk-drop-parent-icon></span></a>
+                            <a href="">PCC <span uk-drop-parent-icon></span></a>
                             <div class="uk-navbar-dropdown uk-drop">
                                 <ul class="uk-nav uk-dropdown-nav">
                                     <li><a href="/" >Poison Information Center</a></li>
@@ -125,7 +127,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="/projects/rural-trauma-care">Rural trauma <span uk-drop-parent-icon></span></a>
+                            <a href="">Rural trauma <span uk-drop-parent-icon></span></a>
                             <div class="uk-navbar-dropdown uk-drop">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li><a href="/" >Community Health Workers</a></li>

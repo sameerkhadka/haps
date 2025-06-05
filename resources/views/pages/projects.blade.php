@@ -44,7 +44,7 @@
                             </div>
                             <div class="uk-panel">
                                 <div class="uk-position-small uk-position-bottom uk-overlay cardTitle">
-                                    <h4>{{$project->title}}</h4>
+                                    <h5>{{$project->title}}</h5>
                                     <div class="cta">
                                         <div class="inCard">
                                             <a href="/projects/{{$project->slug}}">Explore</a>

@@ -764,7 +764,7 @@ nav .uk-navbar-left .uk-subnav li:first-child {
   }
 }
 .project__card .projectCard__image::before {
-  background-color: rgba(7, 46, 122, 0.2);
+  background-color: rgba(7, 46, 122, 0.8196078431);
   content: "";
   height: 100%;
   left: 0;
@@ -775,7 +775,7 @@ nav .uk-navbar-left .uk-subnav li:first-child {
   z-index: 0;
 }
 .project__card .projectCard__image::after {
-  background: linear-gradient(180deg, rgba(7, 46, 122, 0.1019607843) 55%, rgba(7, 46, 122, 0.8));
+  background: linear-gradient(180deg, rgba(7, 46, 122, 0.1019607843) 5%, rgba(7, 46, 122, 0.8));
   content: "";
   height: 100%;
   left: 0;
@@ -788,8 +788,9 @@ nav .uk-navbar-left .uk-subnav li:first-child {
 .project__card .uk-panel .cta {
   padding-bottom: 4px;
 }
-.project__card .cardTitle h4 {
+.project__card .cardTitle h5 {
   color: #fbfbfb;
+  line-height: 30px;
 }
 
 .ongoing .activity__info {

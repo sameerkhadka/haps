@@ -80,7 +80,7 @@
                             </div>
                             <div class="uk-panel">
                                 <div class="uk-position-small uk-position-bottom uk-overlay cardTitle">
-                                    <h4>{{$res->title}}</h4>
+                                    <h5>{{$res->title}}</h5>
                                     <div class="cta">
                                         <div class="inCard">
                                             @if($res->link)

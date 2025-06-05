@@ -37,7 +37,17 @@
         </div>
     </section>
 
+    <section class="popupSection">
+        <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Open</button>
 
+        <div id="modal-example" uk-modal>
+            <div class="uk-modal-dialog">
+                <img src="{{asset('images/table.png')}}" alt="">
+            </div>
+        </div>
+    </section>
+
+<!-- 
     <section class="p-12 testimonials">
         <div class="uk-container">
             <div class="uk-grid uk-child-width-1-2@s">
@@ -58,7 +68,7 @@
                 @endforeach
             </div>
         </div>
-    </section>
+    </section> -->
 
 
     <section class="volunteerForm p-12" id="donateform">

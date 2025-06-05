@@ -116,7 +116,7 @@
                                     </div>
                                     <div class="uk-panel">
                                         <div class="uk-position-small uk-position-bottom uk-overlay cardTitle">
-                                            <h4>{{$pro->title}}</h4>
+                                            <h5>{{$pro->title}}</h5>
                                             <div class="cta">
                                                 <div class="inCard">
                                                     <a href="/projects/{{$pro->slug}}">Explore</a>

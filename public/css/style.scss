@@ -977,7 +977,7 @@ nav{
         }
 
         &::before {
-            background-color: #072e7a33;
+            background-color: #072e7ad1;
             content: "";
             height: 100%;
             left: 0;
@@ -989,7 +989,7 @@ nav{
         }
 
         &::after {
-            background: linear-gradient(180deg, #072e7a1a 55%, #072e7acc);
+            background: linear-gradient(180deg, #072e7a1a 05%, #072e7acc);
             content: "";
             height: 100%;
             left: 0;
@@ -1007,9 +1007,10 @@ nav{
 
     .cardTitle{
 
-        h4{
+        h5{
             
             color: $notwhite;
+            line-height: 30px;
         }
     }
 }

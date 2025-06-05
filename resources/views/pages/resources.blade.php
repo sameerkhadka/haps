@@ -43,7 +43,7 @@
                             </div>
                             <div class="uk-panel">
                                 <div class="uk-position-small uk-position-bottom uk-overlay cardTitle">
-                                    <h4>{{$res->title}}</h4>
+                                    <h5>{{$res->title}}</h5>
                                     <div class="cta">
                                         <div class="inCard">
                                             <a href="{{$res->link ?? '/storage/'.json_decode($res->file)[0]->download_link}}" target="blank">Explore</a>
