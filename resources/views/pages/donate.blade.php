@@ -71,15 +71,7 @@
         </div>
     </section>
 
-    <section class="popupSection">
-        <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Total Registered Doctors</button>
 
-        <div id="modal-example" uk-modal>
-            <div class="uk-modal-dialog">
-                <img src="{{asset('images/table.png')}}" alt="">
-            </div>
-        </div>
-    </section>
 
 <!-- 
     <section class="p-12 testimonials">
