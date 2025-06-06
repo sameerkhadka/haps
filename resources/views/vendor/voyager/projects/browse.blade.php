@@ -177,8 +177,17 @@
                                                     @else
                                                         {{ $data->{$row->field} }}
                                                     @endif
+                                                @elseif($row->display_name == 'Ongoing Projects')
+                                                    @if ($data->ongoing == 1)
+                                                                <?php $checked = 'checked'; ?>
+                                                        @else
+                                                            <?php $checked = ' '; ?>
+                                                        @endif
+                                                        <input type="checkbox" class="myCheckBox"
+                                                            data-field="{{ $row->field }}" data-id="{{ $data->id }}"
+                                                            {{ $checked }} style="margin: 4px 19px 0 !important;">
                                                 @elseif($row->type == 'checkbox')
-                                                @if(Request('category_id') != 4) @continue @endif
+                                                    @if(Request('category_id') != 4) @continue  @endif
                                                     @if ($data->{$row->field} == 1)
                                                             <?php $checked = 'checked'; ?>
                                                     @else

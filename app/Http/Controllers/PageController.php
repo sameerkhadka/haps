@@ -24,7 +24,7 @@ class PageController extends Controller
     {
         $data['item'] = Homepage::find(1);
         $data['sliders'] = Slider::orderBy('order')->get();
-        $data['projects'] = Project::orderBy('order')->get()->except(1);
+        $data['projects'] = Project::where('ongoing',1)->orderBy('order')->get()->except(1);
         $data['news'] = News::orderBy('date','desc')->get()->except(1);
         return view('pages.index', $data);
     }
