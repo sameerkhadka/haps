@@ -104,7 +104,7 @@
     </section>
     @endif
 
-    @if(Request::segment(2) == 'cpr-training')
+    @if(Request::segment(2) == 'cpr-and-choking-training-programs')
     <section class="popupSection">
         <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Total Registered Doctors</button>
 
