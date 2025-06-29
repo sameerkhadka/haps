@@ -110,7 +110,7 @@
 
         <div id="modal-example" uk-modal>
             <div class="uk-modal-dialog">
-                <img src="{{asset('images/table.png')}}" alt="">
+                <img src="{{Voyager::image(setting('site.cpr'))}}" alt="">
             </div>
         </div>
     </section>
