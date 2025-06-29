@@ -379,6 +379,9 @@ img {
     color: $text;
     font-family: "Work sans";
     font-weight: 400;
+    text-transform: none;
+    line-height: 1.2;
+    font-size: 13px;
     
     &:hover {
         color: $light;
@@ -455,6 +458,9 @@ nav{
     }
 }
 
+.uk-dropdown {
+    display: none;
+}
 
 
 // @media screen and (max-width: 1395px) {

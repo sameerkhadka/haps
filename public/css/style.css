@@ -332,6 +332,9 @@ img {
   color: #08133d;
   font-family: "Work sans";
   font-weight: 400;
+  text-transform: none;
+  line-height: 1.2;
+  font-size: 13px;
 }
 .uk-dropdown-nav > li > a:hover {
   color: #c0391a;
@@ -382,6 +385,10 @@ nav .uk-navbar-left .uk-subnav li:first-child {
   nav img {
     width: 80px;
   }
+}
+
+.uk-dropdown {
+  display: none;
 }
 
 @media (max-width: 1336px) {
