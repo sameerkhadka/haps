@@ -23,11 +23,13 @@
             <img src="{{Voyager::image($item->cover)}}" alt="{{$item->cover_title}}">
             <!-- Caption ko cover --><p> {{$item->cover_title}} </p>
             @endif
+            @if($item->video)
             <div class="home_videobanner">
                 <div class="homeVideo__wrap">
                     <iframe src="https://www.youtube.com/embed/{{$item->video}}?&amp;autoplay=1&amp;loop=1&amp;playlist=wzZNU_IFgmc&amp;enablejsapi=1" allowfullscreen="" loop="" uk-video="autoplay: inview" allow="autoplay"></iframe>
                 </div>
             </div>
+            @endif
             <div class="main__content uk-margin-medium-top">
                {!!$item->description!!}
                @foreach($blogs as $blog)
