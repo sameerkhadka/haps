@@ -141,6 +141,9 @@
 
 @section('javascript')
     <script>
+        @if($edit && $dataTypeContent->id != 15)
+        $('input[type="text"][name="video"]').parent().remove();
+        @endif
         $('input[type="number"][name="category_id"]').parent().remove();
         @if(Request('category_id') != 4)
         $('input[type="checkbox"][name="other_projects"]').parent().remove();
