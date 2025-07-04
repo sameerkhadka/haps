@@ -29,6 +29,11 @@ class PageController extends Controller
         return view('pages.index', $data);
     }
 
+    public function team()
+    {
+        return view('pages.team');
+    }
+
     public function about()
     {
         $data['item'] = About::find(1);

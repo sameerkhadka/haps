@@ -16,6 +16,7 @@ use App\Http\Controllers\PageController;
 */
 
 Route::get('/',[PageController::class,'index']);
+Route::get('/team',[PageController::class,'team']);
 Route::get('/about',[PageController::class,'about']);
 Route::get('/other-projects',[PageController::class,'project']);
 Route::get('/projects/{slug}',[PageController::class,'projectDetail']);
