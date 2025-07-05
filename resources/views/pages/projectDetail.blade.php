@@ -121,6 +121,13 @@
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            UIkit.modal('#modal-example').show();
+        });
+    </script>
+
     @endif
 
     @endsection
