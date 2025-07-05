@@ -10,7 +10,7 @@
 @section('body')
 
 
-    <section class="team p-1">
+    <!-- <section class="team p-1">
         <div class="uk-container">
             <div class="uk-margin-auto uk-margin-auto-vertical uk-width-3-5@s">
                 <h2>{{$item->team_title}}</h2>
@@ -33,6 +33,6 @@
                 @endforeach
             </div>
         </div>
-    </section>
+    </section> -->
 
 @endsection
