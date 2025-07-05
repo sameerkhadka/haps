@@ -256,9 +256,6 @@
                     <img src="{{asset('images/americanepal.png')}}" alt="">
                 </div>
                 <div class="logo uk-text-center uk-margin-medium-top">
-                    <img src="{{asset('images/brownuni.png')}}" alt="">
-                </div>
-                <div class="logo uk-text-center uk-margin-medium-top">
                     <img src="{{asset('images/nayahealth.png')}}" alt="">
                 </div>
                 <div class="logo uk-text-center uk-margin-medium-top">
@@ -278,6 +275,12 @@
                 </div>
                 <div class="logo uk-text-center uk-margin-medium-top">
                     <img src="{{asset('images/menat.png')}}" alt="">
+                </div>
+                <div class="logo uk-text-center uk-margin-medium-top">
+                    <img src="{{asset('images/sadaksaathi.png')}}" alt="">
+                </div>
+                <div class="logo uk-text-center uk-margin-medium-top">
+                    <img src="{{asset('images/nepalrising.png')}}" alt="">
                 </div>
             </div>
         </div>

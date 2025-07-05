@@ -1334,7 +1334,9 @@ nav{
 
         img{
 
-            max-height: 102px;
+            width: 180px;
+            height: 92px;
+            object-fit: scale-down;
         }
     }
 }

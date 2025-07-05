@@ -25,7 +25,7 @@
             {!!$item->donate_text!!}
         </div>
         <div class="uk-container">
-            <div class="uk-grid uk-child-width-1-3@s">
+            <div class="uk-grid uk-child-width-1-4@s">
                 <div class="volunteerContact  uk-text-center@s">
                     <h5>Company Mailing Address</h5>
                     <span>{{setting('contact-us.address')}}</span>
@@ -39,15 +39,15 @@
                     <h5>Our bank account in Nepal</h5>
                     <div class="bank_details">
                         {!!$item->bank_detail!!}
-                    </ul>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="uk-container uk-containerxsmall uk-margin-medium-top">
-            
-            <div class="gofundme uk-margin-bottom uk-text-center">
-               <!-- {!!$item->gofundme!!} -->
-               <img src="{{asset('images/paypal.jpeg')}}" style="width:240px">
+                <div class="uk-text-center@s">
+                    <h5>Our PayPal Account</h5>
+                    <div class="gofundme uk-margin-bottom uk-text-center">
+                    <!-- {!!$item->gofundme!!} -->
+                        <img src="{{asset('images/paypal.jpeg')}}" style="width:240px">
+                    </div>
+                </div>
             </div>
         </div>
     </section>

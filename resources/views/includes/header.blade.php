@@ -18,9 +18,9 @@
                                     <ul class="uk-nav uk-dropdown-nav">
                                         <li><a href="/about" >About Us</a></li>
                                         <li><a href="/news" >News </a></li>
-                                        <li><a href="/team" >Teams </a></li>
                                         <li><a href="/gallery#photo">Photo Gallery</a></li>
                                         <li><a href="/gallery">Video Gallery</a></li>
+                                        <li><a href="/team" >Team </a></li>
                                         <li><a href="/volunteer#faqs">FAQ</a></li>
                                     </ul>
                                 </div>

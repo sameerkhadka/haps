@@ -993,7 +993,10 @@ nav .uk-navbar-left .uk-subnav li:first-child {
 }
 
 .partners .logo img {
-  max-height: 102px;
+  width: 180px;
+  height: 92px;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
 }
 
 .homeGallery__wrap {
