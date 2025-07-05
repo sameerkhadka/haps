@@ -1468,4 +1468,8 @@ footer .footer__end .footerEnd__section .uk-flex {
   background-color: #ffffff;
   color: #08133d;
   border-color: #08133d;
+}
+
+.uk-modal-dialog {
+  transform: translateX(-100px);
 }/*# sourceMappingURL=style.css.map */
