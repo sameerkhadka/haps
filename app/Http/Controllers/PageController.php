@@ -30,8 +30,11 @@ class PageController extends Controller
     }
 
     public function team()
-    {
-        $data['teams'] = Team::orderBy('order')->get();
+    {        
+        $data['item'] = Team::find(1);
+        $data['executive'] = Team::where('category','Executive Committee')->orderBy('order')->get();
+        $data['bod'] = Team::where('category','BOD')->orderBy('order')->get();
+        $data['collabs'] = Team::where('category','Collaborators')->orderBy('order')->get();
         return view('pages.team', $data);
     }
 
