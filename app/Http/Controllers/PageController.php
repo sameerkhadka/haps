@@ -31,7 +31,8 @@ class PageController extends Controller
 
     public function team()
     {
-        return view('pages.team');
+        $data['teams'] = Team::orderBy('order')->get();
+        return view('pages.team', $data);
     }
 
     public function about()
