@@ -17,7 +17,7 @@
             
             <div class="uk-grid uk-child-width-1-4@m uk-child-width-1-2@s uk-margin-medium-top uk-margin-xlarge-bottom">
                 <h3>Executive Members</h3>
-                 @foreach($team as $team)
+                 @foreach($teams as $team)
                 <div class="team__wrap uk-margin-top">
                     <div class="team__photo">
                         <img src="{{Voyager::image($team->image)}}" alt="">
