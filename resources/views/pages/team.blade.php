@@ -14,9 +14,9 @@
                 <h2>{{$item->basic_page_title}}</h2>
                 <p class="uk-margin-medium-bottom uk-text-center">{!!$item->basic_description!!}</p>
             </div>
-            
+            <h3>Executive Members</h3>
             <div class="uk-grid uk-child-width-1-4@m uk-child-width-1-2@s uk-margin-medium-top uk-margin-xlarge-bottom">
-                <h3>Executive Members</h3>
+                
                  @foreach($executive as $team)
                 <div class="team__wrap uk-margin-top">
                     <div class="team__photo">
@@ -31,8 +31,8 @@
                 @endforeach
                 
             </div>
-            <div class="uk-grid uk-child-width-1-4@m uk-child-width-1-2@s">
                 <h3>Board of Directors</h3>
+            <div class="uk-grid uk-child-width-1-4@m uk-child-width-1-2@s">
                 @foreach($bod as $team)
                 <div class="team__wrap uk-margin-top">
                     <div class="team__photo">
@@ -47,8 +47,8 @@
                 @endforeach
                 
             </div>
-            <div class="uk-grid uk-child-width-1-4@m uk-child-width-1-2@s">
                 <h3>International Collaborators and Faculty</h3>
+            <div class="uk-grid uk-child-width-1-4@m uk-child-width-1-2@s">
                 @foreach($collabs as $team)
                 <div class="team__wrap uk-margin-top">
                     <div class="team__photo">

@@ -375,13 +375,28 @@ img {
     }
 }
 
+.uk-dropdown{
+
+    padding: 0;
+
+    li{
+
+        padding: 9px 12px;
+        border-bottom: 1px solid #084cd06b;
+
+        &:last-child{
+
+            border-bottom: none;
+        }
+    }
+}
+
 .uk-dropdown-nav>li>a {
     color: $text;
     font-family: "Work sans";
     font-weight: 400;
     text-transform: none;
     line-height: 1.2; 
-    padding: 8px 0;
     
     &:hover {
         color: $light;

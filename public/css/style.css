@@ -328,13 +328,23 @@ img {
   color: #c0391a;
 }
 
+.uk-dropdown {
+  padding: 0;
+}
+.uk-dropdown li {
+  padding: 9px 12px;
+  border-bottom: 1px solid rgba(8, 76, 208, 0.4196078431);
+}
+.uk-dropdown li:last-child {
+  border-bottom: none;
+}
+
 .uk-dropdown-nav > li > a {
   color: #08133d;
   font-family: "Work sans";
   font-weight: 400;
   text-transform: none;
   line-height: 1.2;
-  padding: 8px 0;
 }
 .uk-dropdown-nav > li > a:hover {
   color: #c0391a;
