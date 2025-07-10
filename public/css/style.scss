@@ -382,7 +382,7 @@ img {
     li{
 
         padding: 9px 12px;
-        border-bottom: 1px solid #084cd06b;
+        border-bottom: 1px solid #084bd050;
 
         &:last-child{
 
@@ -454,6 +454,10 @@ nav{
     .uk-navbar-left .uk-subnav li:first-child{
 
         margin-right: 8px;
+    }
+    .uk-navbar-left .uk-subnav .uk-dropdown-nav li:first-child{
+
+        margin-right: 0px;
     }
     
     @media (max-width: 640px) {
@@ -1813,6 +1817,14 @@ footer{
 
     text-align: center;
 
+    h3{
+        
+        font-size: 18px;
+        font-weight: 600;
+        font-family: Montserrat;
+        margin-top: 64px;
+    }
+
     .team__wrap{
 
         .team__photo{
@@ -1923,6 +1935,12 @@ footer{
         @media screen and (max-width: 1320px) {
             
             height: auto;
+        }
+
+        @media screen and (max-height: 800px) {
+            
+            height: auto;
+            max-height: none;;
         }
     }
 
