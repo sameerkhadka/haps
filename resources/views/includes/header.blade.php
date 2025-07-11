@@ -87,10 +87,10 @@
                             </a>
                             <a href="{{setting('contact-us.instagram')}}" class="uk-navbar-item" target="_blank">
                                 <span uk-icon="icon: instagram" class="uk-icon"></span>
-                            </a>
+                            </a> -->
                             <a class="uk-navbar-item uk-navbar-toggle" href="#header__mobile" uk-toggle="" aria-expanded="false">
                               <div uk-navbar-toggle-icon="" class="uk-icon uk-navbar-toggle-icon"></div>
-                            </a> -->
+                            </a>
                             <div class="cta">
                                 <a href="/donate" class="btn">Donate</a>
                             </div>
