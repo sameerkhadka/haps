@@ -113,6 +113,7 @@
                                     <li><a href="/news" >News Coverage</a></li>
                                     <li><a href="/galleryy#photo" >Photo Gallery</a></li>
                                     <li><a href="/gallery" >Video Gallery</a></li>
+                                    <li><a href="/team" >Team </a></li>
                                     <li><a href="/volunteer#faqs">FAQ</a></li>
                                 </ul>
                             </div>

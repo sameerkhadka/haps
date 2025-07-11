@@ -461,6 +461,9 @@ nav .uk-navbar-left .uk-subnav .uk-dropdown-nav li:first-child {
 .uk-offcanvas-bar .uk-nav li {
   margin-top: 20px;
 }
+.uk-offcanvas-bar .uk-nav .uk-dropdown-nav li {
+  margin-top: 4px;
+}
 
 .video__wrap {
   position: fixed;
