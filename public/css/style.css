@@ -1510,6 +1510,7 @@ table td p {
   font-weight: 400;
   line-height: 24px;
   margin-bottom: 8px;
+  text-align: left;
 }
 
 .main__content table td p a {
